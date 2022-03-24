@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
     public int enemyHp = 1;
     private GameObject player;
 
-    public float shotSpan = 3f;
+    public float shotSpan = 1.5f;
     private float currentTime = 0f;
 
     [SerializeField] private GameObject enemyBullet;
@@ -18,6 +18,8 @@ public class EnemyScript : MonoBehaviour
     private Renderer _renderer;
 
     private Sequence _seq;
+
+
 
     /*private void OnTriggerEnter(Collider other)
     {
@@ -39,12 +41,16 @@ public class EnemyScript : MonoBehaviour
 
     private void Update()
     {
+        float dis = Vector3.Distance(player.transform.position, transform.position);
+        Debug.Log(dis);
         currentTime += Time.deltaTime;
         if (currentTime > shotSpan)
         {
-            
+            if(dis <= 30.0f)
+            {
+                Shot();
+            }
             currentTime = 0f;
-            Shot();
         }
     }
 

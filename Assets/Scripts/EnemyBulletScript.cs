@@ -26,7 +26,7 @@ public class EnemyBulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("hit");
-        if (other.gameObject.tag != "Enemy")
+        if (other.gameObject.tag != "Enemy") 
         {
             Debug.Log(other.gameObject.tag);
             Destroy(gameObject);

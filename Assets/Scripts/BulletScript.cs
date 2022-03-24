@@ -32,7 +32,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag != "Player") 
         {
             Debug.Log(other.gameObject.tag);
             Destroy(gameObject);

@@ -134,5 +134,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 5
   shotSpan: 3
-  enemyBullet: {fileID: 0}
+  enemyBullet: {fileID: 4277102318675840971, guid: 570823b88353b3644b5c9f7966c06e71,
+    type: 3}
   _renderer: {fileID: 4845994397920732827}

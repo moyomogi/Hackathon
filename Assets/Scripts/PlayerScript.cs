@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class PlayerScript : MonoBehaviour
 
     public UIManager uIManager;
 
+    [SerializeField]
+    private Renderer _renderer;
+
+    private Sequence _seq;
+
+    private bool isDead = false;
+    public bool getIsDead() { return isDead; }
 
 
     private void Awake()
@@ -48,13 +56,32 @@ public class PlayerScript : MonoBehaviour
             if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
             {
                 playerHP -= 10;
+                HitBlink();
                 uIManager.UpdateHP(playerHP);
 
-                if(playerHP > 0) Debug.Log("Žc‚èHP:" + playerHP);
-                else Debug.Log("GameOver");
+                if (playerHP > 0)
+                {
+                    Debug.Log("Žc‚èHP:" + playerHP);
+                }
+                else
+                {
+                    isDead = true;
+                    Debug.Log("GameOver");
+                }
             }
-            
         }
 
+    }
+
+    private void HitBlink()
+    {
+        _seq?.Kill();
+        _seq = DOTween.Sequence();
+        _seq.AppendCallback(() => _renderer.enabled = false);
+        _seq.AppendInterval(0.05f);
+        _seq.AppendCallback(() => _renderer.enabled = true);
+        _seq.AppendInterval(0.05f);
+        _seq.SetLoops(2);
+        _seq.Play();
     }
 }
