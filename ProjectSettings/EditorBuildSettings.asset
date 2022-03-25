@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/CharacterEditorPackage/Scenes/DemoScene2.unity
     guid: f6f0a0d8cca0f0646834ed102217bb45
   - enabled: 0
-    path: Assets/CharacterEditorPackage/Scenes/DemoScene.unity
+    path: Assets/CharacterEditorPackage/Scenes/Demo.unity
     guid: eee835c07d9211946ba2f7fc5c0d633c
   - enabled: 0
     path: Assets/CharacterEditorPackage/Scenes/RunnerSceneDemo.unity

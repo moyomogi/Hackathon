@@ -101,7 +101,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: b4eedfc3650567d49a2f226499644ba6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 10
   shotSpan: 3
+  bulletSpeed: 30
   enemyBullet: {fileID: 4277102318675840971, guid: 570823b88353b3644b5c9f7966c06e71,
     type: 3}
   _renderer: {fileID: 6318863700555079928}
+  playerSprite: {fileID: 0}

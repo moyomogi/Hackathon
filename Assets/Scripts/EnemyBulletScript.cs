@@ -26,10 +26,23 @@ public class EnemyBulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("hit");
-        if (other.gameObject.tag != "Enemy") 
+
+        string tag = other.gameObject.tag;
+
+        Debug.Log(tag);
+        
+        if (other.gameObject.tag != "Enemy")
         {
-            Debug.Log(other.gameObject.tag);
+            //Debug.Log("hit");
+
+            //Debug.Log(other.gameObject.tag);
             Destroy(gameObject);
+
+            /*if (other.gameObject.tag != "EnemyBullet")
+            {
+                Debug.Log(other.gameObject.tag);
+                Destroy(gameObject);
+            }*/
         }
     }
 }

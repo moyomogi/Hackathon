@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     private GameObject player;
 
     public float shotSpan = 1.5f;
+    public float bulletSpeed = 10.0f;
     private float currentTime = 0f;
 
     [SerializeField] private GameObject enemyBullet;
@@ -17,9 +18,12 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private Renderer _renderer;
 
+    public GameObject playerSprite;
+    
+
     private Sequence _seq;
 
-
+    float dis = 0.0f;
 
     /*private void OnTriggerEnter(Collider other)
     {
@@ -37,18 +41,19 @@ public class EnemyScript : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
+        dis = Vector3.Distance(player.transform.position, transform.position);
     }
 
     private void Update()
     {
-        float dis = Vector3.Distance(player.transform.position, transform.position);
-        Debug.Log(dis);
+        dis = Vector3.Distance(player.transform.position, transform.position);
         currentTime += Time.deltaTime;
         if (currentTime > shotSpan)
         {
             if(dis <= 30.0f)
             {
-                Shot();
+                //Shot(); //アニメーションで制御することにした
             }
             currentTime = 0f;
         }
@@ -74,12 +79,15 @@ public class EnemyScript : MonoBehaviour
         else if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine("Blow");
-
         }
 
 
     }
+
+
     //https://sunagitsune.com/unitycollisionvector2d/
+
+    
     IEnumerator Blow()
     {
         int i = 0;
@@ -88,7 +96,7 @@ public class EnemyScript : MonoBehaviour
             yield return new WaitForSeconds(0.03f);
             player.transform.Translate(
                 (player.transform.position - this.transform.position).normalized.x / 2,
-                (player.transform.position - this.transform.position).normalized.y,
+                0,
                 0
             );
 
@@ -114,10 +122,14 @@ public class EnemyScript : MonoBehaviour
 
         var pos = this.gameObject.transform.position;
 
-        var t = Instantiate(enemyBullet) as GameObject;
-        t.transform.position = pos;
-        Vector3 vec = Vector3.Scale((player.transform.position - pos), new Vector3(1, 1, 0)).normalized;
-        t.GetComponent<Rigidbody>().velocity = vec * 10.0f; 
+        if(dis <= 30.0f)
+        {
+            var t = Instantiate(enemyBullet) as GameObject;
+            t.transform.position = pos;
+            Debug.Log(t.transform.position);
+            Vector3 vec = Vector3.Scale((player.transform.position - pos), new Vector3(1, 1, 0)).normalized;
+            t.GetComponent<Rigidbody>().velocity = vec * bulletSpeed;
+        }
     }
 
 
