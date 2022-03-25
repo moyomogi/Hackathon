@@ -2286,6 +2286,7 @@ MonoBehaviour:
   m_InterpolationFactor: 10
   m_UseFixedUpdate: 0
   m_ZDistance: 10
+  m_YDistance: 5
 --- !u!1 &1211697299
 GameObject:
   m_ObjectHideFlags: 0

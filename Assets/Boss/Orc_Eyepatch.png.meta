@@ -1,0 +1,1310 @@
+fileFormatVersion: 2
+guid: 84a415b3dfc41a4448e16ccd6c6ee194
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orc_Eyepatch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b5c5e3a853ced4894c822b990c5c7b
+      internalID: -1443312855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe2bbb226dd26347ac1aade7914bccd
+      internalID: -1842658681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_2
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55ecc2a548a2d846ac995d505f060fa
+      internalID: -1363386636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_3
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423a4cd1c6c2a694880e1acb3e3a444d
+      internalID: 1332092531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_4
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9f6cee8aa31da43a32f7f67dbd01d6
+      internalID: -1048665752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_5
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e8681cb3cf70e4c9252ac48fae568b
+      internalID: 1471698477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_6
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6facac681a314449af7f88bcecedbb
+      internalID: 504920169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_7
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b459b856837e545b5ae7ba5d1c82a4
+      internalID: -422144450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_8
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 640
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcce5ce4987e514c981749c87b24c60
+      internalID: -1338289654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fb87476bb85b44baef20a3fcebcb01
+      internalID: -168439875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_10
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ecaf032d6e8814e986982c8f34f2f9
+      internalID: -1730681769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_11
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078ff1a25b475174aa7d74eafd13273f
+      internalID: -624956112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_12
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0dd99cd44354e4891b25cb4783cb52
+      internalID: -313474210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_13
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8604afa974974d499151feb15e21e9b
+      internalID: 1082047338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_14
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6101eddc2ddaab40adebfa5e22febaa
+      internalID: -1733354876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_15
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6143f501b211c4489d3901f7cb3d783
+      internalID: -1583153657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_16
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89cb7d7567c89d84890776a1f013cfeb
+      internalID: -289270247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_17
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 512
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5518158f6ce8476498b2720a3a153e7b
+      internalID: -1167679719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0ff1743fdb3f44f93d2ce9963b0a7b
+      internalID: 106499790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_19
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1390e6e318d58344872fea35bf6f5b7
+      internalID: -1313208704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_20
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20e7994e847ba34abaa1bab4aa35bb2
+      internalID: -926690417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_21
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8475bb982f3b954cb9919d9f22b3bf1
+      internalID: -995040460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_22
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f38766c77a5b240a436dbfa005ddc6
+      internalID: -179578104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_23
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc38de6c9429d24dabb166506b7d9e8
+      internalID: -1504515195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_24
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d22d7952e399246b9f4c784f5470d7
+      internalID: 632055133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_25
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff481d94f3be2824ba942f3d32e21ffc
+      internalID: 1364936360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_26
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 384
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ded07a1ecaf99488dfda6bb2898e36
+      internalID: 143295845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb17367afcf26843990c3e103d20f09
+      internalID: -1370248095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_28
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df7575bdd2da3d43b4341d7ebbc80fc
+      internalID: 658571543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_29
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0f7fbdc56ef354991270a3a17b4b5e
+      internalID: 1618746031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_30
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f639780d343854f9f2ef84dd32cf3c
+      internalID: 802819162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_31
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d33b2d7ffacd684db3a21f6aa759922
+      internalID: 2024831088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_32
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad00ab70592753940ac5a4b83f64499d
+      internalID: -153286452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_33
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665695ee78f2ed944924352d06d18765
+      internalID: -1176743571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_34
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d719b86703675843ad2bfef152bee50
+      internalID: 246837939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_35
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 256
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4148f6553e17f84583e6760ae9a1066
+      internalID: 1116957050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c5ba43266c6134797dff9cf3e0a962
+      internalID: -496298724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_37
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3869eb23d86474a8e0830cfe902fc6
+      internalID: 1408599934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_38
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1532a23cf3372f84d84a4b7cef1b5ab4
+      internalID: 952017973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_39
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e303fe372b112f0469685efc832636b7
+      internalID: 1397382610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_40
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48f37747326a2e4388e8ac60e58fe56
+      internalID: -1992314655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_41
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6a125302377e34f96cc2c8e784e881
+      internalID: 1589944403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_42
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4fe48ef3465e34d87ef6271dcf5c57
+      internalID: -1144859834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_43
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b8115bcf438cf42b004461b7ee95e0
+      internalID: -888415114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_44
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 128
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21ef268cb0bdf94ab750eb9608dcade
+      internalID: -49592237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43b27d349ba0e24089b614307fc3910
+      internalID: 436234550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_46
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0f4d4273eb09b4a9e95de6361eb1d6
+      internalID: 880669452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_47
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb6f721515f7a8408449e70ffc0f3f3
+      internalID: 1959227845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_48
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20ab51978edb6843b456d35b64bcd51
+      internalID: 1474864311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_49
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac72a652fa3e2ea46b7060e9385e8114
+      internalID: 2119401264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_50
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26aa531060ee744f87e3035a7db1541
+      internalID: 344828518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_51
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4772f8ac91fdbc4cb0a7150d94ac024
+      internalID: -1601169410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_52
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdd410d0d5189e48bcca0443eccadf2
+      internalID: -1212150501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc_Eyepatch_53
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 196
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b8f5d90c616614bb27997d8f7cbe57
+      internalID: -1471420600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Orc_Eyepatch_49: 2119401264
+      Orc_Eyepatch_21: -995040460
+      Orc_Eyepatch_50: 344828518
+      Orc_Eyepatch_23: -1504515195
+      Orc_Eyepatch_29: 1618746031
+      Orc_Eyepatch_6: 504920169
+      Orc_Eyepatch_18: 106499790
+      Orc_Eyepatch_39: 1397382610
+      Orc_Eyepatch_30: 802819162
+      Orc_Eyepatch_35: 1116957050
+      Orc_Eyepatch_45: 436234550
+      Orc_Eyepatch_12: -313474210
+      Orc_Eyepatch_8: -1338289654
+      Orc_Eyepatch_19: -1313208704
+      Orc_Eyepatch_52: -1212150501
+      Orc_Eyepatch_53: -1471420600
+      Orc_Eyepatch_51: -1601169410
+      Orc_Eyepatch_2: -1363386636
+      Orc_Eyepatch_34: 246837939
+      Orc_Eyepatch_36: -496298724
+      Orc_Eyepatch_26: 143295845
+      Orc_Eyepatch_7: -422144450
+      Orc_Eyepatch_13: 1082047338
+      Orc_Eyepatch_46: 880669452
+      Orc_Eyepatch_20: -926690417
+      Orc_Eyepatch_5: 1471698477
+      Orc_Eyepatch_11: -624956112
+      Orc_Eyepatch_24: 632055133
+      Orc_Eyepatch_43: -888415114
+      Orc_Eyepatch_1: -1842658681
+      Orc_Eyepatch_48: 1474864311
+      Orc_Eyepatch_17: -1167679719
+      Orc_Eyepatch_40: -1992314655
+      Orc_Eyepatch_9: -168439875
+      Orc_Eyepatch_41: 1589944403
+      Orc_Eyepatch_33: -1176743571
+      Orc_Eyepatch_10: -1730681769
+      Orc_Eyepatch_25: 1364936360
+      Orc_Eyepatch_42: -1144859834
+      Orc_Eyepatch_14: -1733354876
+      Orc_Eyepatch_38: 952017973
+      Orc_Eyepatch_16: -289270247
+      Orc_Eyepatch_15: -1583153657
+      Orc_Eyepatch_47: 1959227845
+      Orc_Eyepatch_44: -49592237
+      Orc_Eyepatch_4: -1048665752
+      Orc_Eyepatch_28: 658571543
+      Orc_Eyepatch_27: -1370248095
+      Orc_Eyepatch_32: -153286452
+      Orc_Eyepatch_37: 1408599934
+      Orc_Eyepatch_0: -1443312855
+      Orc_Eyepatch_22: -179578104
+      Orc_Eyepatch_3: 1332092531
+      Orc_Eyepatch_31: 2024831088
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

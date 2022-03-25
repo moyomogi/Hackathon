@@ -25,6 +25,9 @@ public class EnemyScript : MonoBehaviour
 
     float dis = 0.0f;
 
+    private Collider coll;
+
+
     /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
@@ -43,6 +46,7 @@ public class EnemyScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         dis = Vector3.Distance(player.transform.position, transform.position);
+        coll = this.GetComponent<Collider>();
     }
 
     private void Update()
@@ -126,8 +130,8 @@ public class EnemyScript : MonoBehaviour
         {
             var t = Instantiate(enemyBullet) as GameObject;
             t.transform.position = pos;
-            Debug.Log(t.transform.position);
             Vector3 vec = Vector3.Scale((player.transform.position - pos), new Vector3(1, 1, 0)).normalized;
+            
             t.GetComponent<Rigidbody>().velocity = vec * bulletSpeed;
         }
     }
