@@ -68,11 +68,13 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            enemyHp -= other.gameObject.GetComponent<BulletScript>().GetBulletDamage();
             Destroy(other.gameObject);
-            enemyHp -= 1;
+            
 
             if (enemyHp <= 0)
             {
+                player.gameObject.GetComponent<PlayerScript>().PlusEnemyCount();
                 Destroy(gameObject);
             }
             else

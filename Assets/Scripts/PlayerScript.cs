@@ -6,6 +6,8 @@ using DG.Tweening;
 public class PlayerScript : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject lv3Bullet;
+    public GameObject lv5Bullet;
     private GameObject player;
 
     public AudioClip audioClip;
@@ -29,6 +31,21 @@ public class PlayerScript : MonoBehaviour
     private bool isDead = false;
     public bool getIsDead() { return isDead; }
 
+    private int playerLevel = 1;
+
+    //Quest用変数
+    [SerializeField] private QuestManagement questManagement = null;
+
+    private int jumpCount = 0;
+    private int slideCount = 0;
+    private bool isCountSlide = true;
+    private int destroyEnemyCount = 0;
+    private int wallRunCount = 0;
+    private bool isCountWallRun = true;
+    //private int getCoinCount = 0;
+
+    private AbilityModule module = null;
+
 
     private void Awake()
     {
@@ -36,17 +53,29 @@ public class PlayerScript : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = audioClip;
     }
+
+    private void Start()
+    {
+        lv5Bullet.transform.localScale = new Vector3(7f, 7f, 1.0f);
+    }
     private void Update()
     {
+        if(m_AbilityModuleManager != null)
+        {
+            module = m_AbilityModuleManager.GetCurrentModule();
+        }
+        
         if (Input.GetKeyDown(KeyCode.F))
         {
             if(m_AbilityModuleManager != null)
             {
-                AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
+                //AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
                 if(module == null || module.GetName() == "Sprint")
                 {
-                    Instantiate(bullet, transform.position + new Vector3(1.6f * player.transform.localScale.x, 0.4f, 0f), transform.rotation);
-                    audioSource.PlayOneShot(audioClip);
+                    for (int i = 1; i <= 1; i++)
+                    {
+                        Shot();
+                    }
                 }
             }
         }
@@ -61,8 +90,65 @@ public class PlayerScript : MonoBehaviour
             }
             //Debug.Log(mutekiTime);
         }
+        //jump判定
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(m_AbilityModuleManager != null)
+            {
+                //AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
+                if (module == null || module.GetName() == "WallRun" || module.GetName() == "WallSlide")
+                {
+                    jumpCount++;
+                    Debug.Log("JumpCount: " + jumpCount);
+                }
+            }
+        }
 
+        
+        //Slide,WallRun判定
+        if(m_AbilityModuleManager != null)
+        {
+            //AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
+            if (module != null)
+            {
+                if (module.GetName() == "Slide")
+                {
+                    if (isCountSlide)
+                    {
+                        slideCount++;
+                        //Debug.Log("slideCount: " + slideCount);
+                        isCountSlide = false;
+                    }
+                }
+                else if (module.GetName() == "WallRun")
+                {
+                    if (isCountWallRun)
+                    {
+                        wallRunCount++;
+                        //Debug.Log("wallRunCount: " + wallRunCount);
+                        isCountWallRun = false;
+                    }
+                }
+                else
+                {
+                    isCountSlide = true;
+                    isCountWallRun = true;
+                }
+            }
+            else
+            {
+                isCountSlide = true;
+                isCountWallRun = true;
+            }
+            
+        }
+        //Debug
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            LevelUp();
+        }
     }
+
 
     private void OnCollisionEnter(Collision other)
     {
@@ -92,6 +178,37 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        //Quest処理
+        if(jumpCount >= 10 && !questManagement.IsQuestFlag(0))
+        {
+            questManagement.SetQuestFlag(0);
+            Debug.Log(questManagement.GetQuest(0).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        else if(destroyEnemyCount >= 1 && !questManagement.IsQuestFlag(1))
+        {
+            questManagement.SetQuestFlag(1);
+            Debug.Log(questManagement.GetQuest(1).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        else if (slideCount >= 3 && !questManagement.IsQuestFlag(2))
+        {
+            questManagement.SetQuestFlag(2);
+            Debug.Log(questManagement.GetQuest(2).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        else if (wallRunCount >= 3 && !questManagement.IsQuestFlag(3))
+        {
+            questManagement.SetQuestFlag(3);
+            Debug.Log(questManagement.GetQuest(3).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        //Quest4のコインの処理
+
     }
 
     private void HitBlink()
@@ -105,4 +222,56 @@ public class PlayerScript : MonoBehaviour
         _seq.SetLoops(2);
         _seq.Play();
     }
+
+    public void Shot()
+    {
+        Instantiate(bullet, transform.position + new Vector3(1.6f * player.transform.localScale.x, 0.4f, 0f), transform.rotation);
+        audioSource.PlayOneShot(audioClip);
+    }
+
+    public int GetPlayerLevel()
+    {
+        return playerLevel;
+    }
+
+    public void LevelUp()
+    {
+        if (playerLevel >= 6) return;
+        playerLevel += 1;
+        //効果音&エフェクト
+        uIManager.UpdatePlayerLevelUI(playerLevel);
+        if (playerLevel == 2)
+        {
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
+        }
+        else if (playerLevel == 3)
+        {
+            bullet = lv3Bullet;
+            bullet.GetComponent<BulletScript>().SetBulletDamage(2);
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
+        }
+        else if (playerLevel == 4)
+        {
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
+        }
+        else if (playerLevel == 5)
+        {
+            bullet = lv5Bullet;
+            bullet.GetComponent<BulletScript>().SetBulletDamage(3);
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
+        }
+        else if (playerLevel == 6)//MAX
+        {
+            bullet.transform.localScale = new Vector3(10f, 10f, 1.0f);
+        }
+
+    }
+
+    public void PlusEnemyCount()
+    {
+        destroyEnemyCount++;
+        Debug.Log("EnemyCount: " + destroyEnemyCount);
+    }
+
+    
 }

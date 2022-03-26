@@ -25,11 +25,10 @@ public class EnemyBulletScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("hit");
 
         string tag = other.gameObject.tag;
 
-        Debug.Log(tag);
+
         
         if (other.gameObject.tag != "Enemy")
         {
