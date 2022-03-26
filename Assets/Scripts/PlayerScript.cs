@@ -243,26 +243,31 @@ public class PlayerScript : MonoBehaviour
         if (playerLevel == 2)
         {
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
+            uIManager.LevelUpExplainText("level 1 Å® 2 BulletSpeed Up!!");
         }
         else if (playerLevel == 3)
         {
             bullet = lv3Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(2);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
+            uIManager.LevelUpExplainText("level 2 Å® 3 BulletDamage Up!!");
         }
         else if (playerLevel == 4)
         {
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
+            uIManager.LevelUpExplainText("level 3 Å® 4 BulletSpeed Up!!");
         }
         else if (playerLevel == 5)
         {
             bullet = lv5Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(3);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
+            uIManager.LevelUpExplainText("level 4 Å® 5 BulletDamage Up!!");
         }
         else if (playerLevel == 6)//MAX
         {
             bullet.transform.localScale = new Vector3(10f, 10f, 1.0f);
+            uIManager.LevelUpExplainText("level 5 Å® MAX BulletSize Up!!");
         }
 
     }

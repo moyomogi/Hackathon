@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public Slider hpSlider;
 
     public Text levelText;
-   
+    public Text levelUpExplainText;
 
     //https://qiita.com/tokoroten_346/items/ea61b8ec215a6f60e187
 
@@ -23,4 +23,15 @@ public class UIManager : MonoBehaviour
         else levelText.text = playerLevel.ToString();
     }
 
+    public void LevelUpExplainText( string info)
+    {
+        levelUpExplainText.text = info;
+        StartCoroutine("TextSet");
+    }
+
+    IEnumerator TextSet()
+    {
+        yield return new WaitForSeconds(1.0f);
+        levelUpExplainText.text = "";
+    }
 }
