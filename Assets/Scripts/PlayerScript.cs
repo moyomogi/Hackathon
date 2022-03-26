@@ -142,11 +142,46 @@ public class PlayerScript : MonoBehaviour
             }
             
         }
+
+        //Quest処理
+        if (jumpCount >= 10 && !questManagement.IsQuestFlag(0))
+        {
+            questManagement.SetQuestFlag(0);
+            Debug.Log(questManagement.GetQuest(0).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        else if (GetEnemyCount() >= 1 && !questManagement.IsQuestFlag(1))
+        {
+            questManagement.SetQuestFlag(1);
+            Debug.Log(questManagement.GetQuest(1).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        else if (slideCount >= 3 && !questManagement.IsQuestFlag(2))
+        {
+            questManagement.SetQuestFlag(2);
+            Debug.Log(questManagement.GetQuest(2).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        else if (wallRunCount >= 3 && !questManagement.IsQuestFlag(3))
+        {
+            questManagement.SetQuestFlag(3);
+            Debug.Log(questManagement.GetQuest(3).GetInformation());
+            LevelUp();
+            Debug.Log(playerLevel);
+        }
+        //Quest4のコインの処理
+
+
         //Debug
         if (Input.GetKeyDown(KeyCode.P))
         {
             LevelUp();
         }
+
+
     }
 
 
@@ -178,36 +213,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        //Quest処理
-        if(jumpCount >= 10 && !questManagement.IsQuestFlag(0))
-        {
-            questManagement.SetQuestFlag(0);
-            Debug.Log(questManagement.GetQuest(0).GetInformation());
-            LevelUp();
-            Debug.Log(playerLevel);
-        }
-        else if(destroyEnemyCount >= 1 && !questManagement.IsQuestFlag(1))
-        {
-            questManagement.SetQuestFlag(1);
-            Debug.Log(questManagement.GetQuest(1).GetInformation());
-            LevelUp();
-            Debug.Log(playerLevel);
-        }
-        else if (slideCount >= 3 && !questManagement.IsQuestFlag(2))
-        {
-            questManagement.SetQuestFlag(2);
-            Debug.Log(questManagement.GetQuest(2).GetInformation());
-            LevelUp();
-            Debug.Log(playerLevel);
-        }
-        else if (wallRunCount >= 3 && !questManagement.IsQuestFlag(3))
-        {
-            questManagement.SetQuestFlag(3);
-            Debug.Log(questManagement.GetQuest(3).GetInformation());
-            LevelUp();
-            Debug.Log(playerLevel);
-        }
-        //Quest4のコインの処理
+        
 
     }
 
@@ -276,6 +282,11 @@ public class PlayerScript : MonoBehaviour
     {
         destroyEnemyCount++;
         Debug.Log("EnemyCount: " + destroyEnemyCount);
+    }
+
+    public int GetEnemyCount()
+    {
+        return destroyEnemyCount;
     }
 
     
