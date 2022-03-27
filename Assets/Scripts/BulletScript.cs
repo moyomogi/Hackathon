@@ -7,8 +7,8 @@ public class BulletScript : MonoBehaviour
     //https://hiyotama.hatenablog.com/entry/2015/06/16/090000
 
     private GameObject player;
-    private float bulletSpeed = 15.0f;
-    private int bulletDamage = 1;
+    public float bulletSpeed = 15.0f;
+    public int bulletDamage = 1;
 
     private void Start()
     {
