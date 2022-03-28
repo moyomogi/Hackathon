@@ -9,7 +9,7 @@ public class QuestManagement : MonoBehaviour
 
     [SerializeField] private int totalQuestNum = 5;
 
-    private bool[] questIsDone;
+    //private bool[] questIsDone;
     private GameObject questUI;
 
     private int num = 5;
@@ -18,7 +18,7 @@ public class QuestManagement : MonoBehaviour
     private void Start()
     {
         questList = new Quest[totalQuestNum];
-        questIsDone = new bool[totalQuestNum];
+        //questIsDone = new bool[totalQuestNum];
 
         questUI = transform.Find("QuestUI").gameObject;
 
@@ -47,12 +47,12 @@ public class QuestManagement : MonoBehaviour
 
     public void SetQuestFlag(int n)
     {
-        questIsDone[n] = true;
+        GameManager.instance.questIsDone[n] = true;
     }
 
     public bool IsQuestFlag(int n)
     {
-        return questIsDone[n];
+        return GameManager.instance.questIsDone[n];
     }
 
     public Quest GetQuest(int n)

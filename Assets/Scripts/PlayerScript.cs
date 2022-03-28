@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
     private bool isDead = false;
     public bool getIsDead() { return isDead; }
 
-    private int playerLevel = 1;
+    //private int playerLevel = 1;
 
     //Quest用変数
     [SerializeField] private QuestManagement questManagement = null;
@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour
     private int destroyEnemyCount = 0;
     private int wallRunCount = 0;
     private bool isCountWallRun = true;
-    //private int getCoinCount = 0;
+    //private int getGamCount = 0;
 
     private AbilityModule module = null;
 
@@ -57,6 +57,52 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         lv5Bullet.transform.localScale = new Vector3(7f, 7f, 1.0f);
+        jumpCount = 0;
+        slideCount = 0;
+        isCountSlide = true;
+        destroyEnemyCount = 0;
+        wallRunCount = 0;
+        isCountWallRun = true;
+
+
+        //Boss_Scene入った時もレベル維持
+
+        uIManager.UpdatePlayerLevelUI(GameManager.instance.playerLevel);
+
+        if (GameManager.instance.playerLevel == 2)
+        {
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
+            //uIManager.LevelUpExplainText("level 1 → 2 BulletSpeed Up!!");
+        }
+        else if (GameManager.instance.playerLevel == 3)
+        {
+            bullet = lv3Bullet;
+            bullet.GetComponent<BulletScript>().SetBulletDamage(2);
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
+            //uIManager.LevelUpExplainText("level 2 → 3 BulletDamage Up!!");
+        }
+        else if (GameManager.instance.playerLevel == 4)
+        {
+            bullet = lv3Bullet;
+            bullet.GetComponent<BulletScript>().SetBulletDamage(2);
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
+            //uIManager.LevelUpExplainText("level 3 → 4 BulletSpeed Up!!");
+        }
+        else if (GameManager.instance.playerLevel == 5)
+        {
+            bullet = lv5Bullet;
+            bullet.GetComponent<BulletScript>().SetBulletDamage(3);
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
+            //uIManager.LevelUpExplainText("level 4 → 5 BulletDamage Up!!");
+        }
+        else if (GameManager.instance.playerLevel == 6)//MAX
+        {
+            bullet = lv5Bullet;
+            bullet.GetComponent<BulletScript>().SetBulletDamage(3);
+            bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
+            bullet.transform.localScale = new Vector3(10f, 10f, 1.0f);
+            //uIManager.LevelUpExplainText("level 5 → MAX BulletSize Up!!");
+        }
     }
     private void Update()
     {
@@ -79,7 +125,7 @@ public class PlayerScript : MonoBehaviour
                 }
             }
         }
-
+        //ダメージ後の無敵時間更新
         if(mutekiFlag == 1)
         {
             mutekiTime -= timeStep;
@@ -90,6 +136,7 @@ public class PlayerScript : MonoBehaviour
             }
             //Debug.Log(mutekiTime);
         }
+
         //jump判定
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -149,31 +196,37 @@ public class PlayerScript : MonoBehaviour
             questManagement.SetQuestFlag(0);
             Debug.Log(questManagement.GetQuest(0).GetInformation());
             LevelUp();
-            Debug.Log(playerLevel);
+            //Debug.Log(playerLevel);
         }
         else if (GetEnemyCount() >= 1 && !questManagement.IsQuestFlag(1))
         {
             questManagement.SetQuestFlag(1);
             Debug.Log(questManagement.GetQuest(1).GetInformation());
             LevelUp();
-            Debug.Log(playerLevel);
+            //Debug.Log(playerLevel);
         }
         else if (slideCount >= 3 && !questManagement.IsQuestFlag(2))
         {
             questManagement.SetQuestFlag(2);
             Debug.Log(questManagement.GetQuest(2).GetInformation());
             LevelUp();
-            Debug.Log(playerLevel);
+            //Debug.Log(playerLevel);
         }
         else if (wallRunCount >= 3 && !questManagement.IsQuestFlag(3))
         {
             questManagement.SetQuestFlag(3);
             Debug.Log(questManagement.GetQuest(3).GetInformation());
             LevelUp();
-            Debug.Log(playerLevel);
+            //Debug.Log(playerLevel);
         }
         //Quest4のコインの処理
-
+        else if(GameManager.instance.gemsNum >= 5 && !questManagement.IsQuestFlag(4))
+        {
+            questManagement.SetQuestFlag(4);
+            Debug.Log(questManagement.GetQuest(4).GetInformation());
+            LevelUp();
+        }
+        
 
         //Debug
         if (Input.GetKeyDown(KeyCode.P))
@@ -235,42 +288,38 @@ public class PlayerScript : MonoBehaviour
         audioSource.PlayOneShot(audioClip);
     }
 
-    public int GetPlayerLevel()
-    {
-        return playerLevel;
-    }
 
     public void LevelUp()
     {
-        if (playerLevel >= 6) return;
-        playerLevel += 1;
+        if (GameManager.instance.playerLevel >= 6) return;
+        GameManager.instance.playerLevel += 1;
         //効果音&エフェクト
-        uIManager.UpdatePlayerLevelUI(playerLevel);
-        if (playerLevel == 2)
+        uIManager.UpdatePlayerLevelUI(GameManager.instance.playerLevel);
+        if (GameManager.instance.playerLevel == 2)
         {
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
             uIManager.LevelUpExplainText("level 1 → 2 BulletSpeed Up!!");
         }
-        else if (playerLevel == 3)
+        else if (GameManager.instance.playerLevel == 3)
         {
             bullet = lv3Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(2);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
             uIManager.LevelUpExplainText("level 2 → 3 BulletDamage Up!!");
         }
-        else if (playerLevel == 4)
+        else if (GameManager.instance.playerLevel == 4)
         {
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
             uIManager.LevelUpExplainText("level 3 → 4 BulletSpeed Up!!");
         }
-        else if (playerLevel == 5)
+        else if (GameManager.instance.playerLevel == 5)
         {
             bullet = lv5Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(3);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
             uIManager.LevelUpExplainText("level 4 → 5 BulletDamage Up!!");
         }
-        else if (playerLevel == 6)//MAX
+        else if (GameManager.instance.playerLevel == 6)//MAX
         {
             bullet.transform.localScale = new Vector3(10f, 10f, 1.0f);
             uIManager.LevelUpExplainText("level 5 → MAX BulletSize Up!!");

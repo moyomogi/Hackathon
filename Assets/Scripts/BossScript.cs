@@ -18,7 +18,7 @@ public class BossScript : MonoBehaviour
     [SerializeField]
     private Renderer _renderer;
 
-    public GameObject playerSprite;
+    //public GameObject playerSprite;
 
 
     private Sequence _seq;
@@ -29,6 +29,7 @@ public class BossScript : MonoBehaviour
 
     public BossUIManager bossUIManager;
 
+    private bool isBossDead = false;
 
     /*private void OnTriggerEnter(Collider other)
     {
@@ -46,7 +47,7 @@ public class BossScript : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
+        //playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         dis = Vector3.Distance(player.transform.position, transform.position);
         coll = this.GetComponent<Collider>();
 
@@ -94,6 +95,7 @@ public class BossScript : MonoBehaviour
             {
                 player.gameObject.GetComponent<PlayerScript>().PlusEnemyCount();
                 Destroy(gameObject);
+                isBossDead = true;
             }
             else
             {
@@ -187,6 +189,11 @@ public class BossScript : MonoBehaviour
             }
         }
         
+    }
+
+    public bool IsBossDead()
+    {
+        return isBossDead;
     }
 
 
