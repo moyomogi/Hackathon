@@ -19,7 +19,7 @@ public partial class ControlledCapsuleCollider : ControlledCollider
     void Awake () 
 	{
 
-        LoadManager.Load();
+        //LoadManager.Load();
 
         m_State.Init(this);
         m_PrevLength = m_Length;
