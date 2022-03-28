@@ -118,10 +118,11 @@ public class PlayerScript : MonoBehaviour
                 //AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
                 if(module == null || module.GetName() == "Sprint")
                 {
-                    for (int i = 1; i <= 1; i++)
-                    {
-                        Shot();
-                    }
+                    Shot();
+                }
+                else if(module.GetName() == "Crouch" || module.GetName() == "Slide")
+                {
+                    CronchShot();
                 }
             }
         }
@@ -285,6 +286,12 @@ public class PlayerScript : MonoBehaviour
     public void Shot()
     {
         Instantiate(bullet, transform.position + new Vector3(1.6f * player.transform.localScale.x, 0.4f, 0f), transform.rotation);
+        audioSource.PlayOneShot(audioClip);
+    }
+
+    public void CronchShot()
+    {
+        Instantiate(bullet, transform.position + new Vector3(1.6f * player.transform.localScale.x, 0.2f, 0f), transform.rotation);
         audioSource.PlayOneShot(audioClip);
     }
 

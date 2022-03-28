@@ -41,14 +41,14 @@ public class GameManager : MonoBehaviour
             GameManager.instance.questIsDone[i] = false;
         }
     }
-    /*private void Update()
+    private void Update()
     {
-        // デバッグ用 S キーセーブ
-        if (Input.GetKeyDown(KeyCode.S))
+        // デバッグ用 R キーセーブ(s->rキーに変更)
+        if (Input.GetKeyDown(KeyCode.R))
         {
             SaveManager.Save();
         }
-    }*/
+    }
 
  
 }

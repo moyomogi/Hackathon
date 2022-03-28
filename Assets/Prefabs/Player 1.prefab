@@ -5474,6 +5474,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1008222553936633259, guid: e97b0a9a351737d4b8e649e7f491faed, type: 3}
+  lv3Bullet: {fileID: 7453017998553849962, guid: f2df5b678def39245867ae915ecdfc56,
+    type: 3}
+  lv5Bullet: {fileID: 5403957486218201653, guid: 4f56e618da4858e48be85367fbc8d225,
+    type: 3}
   audioClip: {fileID: 8300000, guid: bbbd7f33df9a4de429eb8ff75a0f247f, type: 3}
   m_AbilityModuleManager: {fileID: 4694906758203612750}
   uIManager: {fileID: 0}
@@ -5481,6 +5485,7 @@ MonoBehaviour:
   mutekiFlag: 0
   mutekiTime: 30
   timeStep: 1
+  questManagement: {fileID: 0}
 --- !u!1 &4694906758213319092
 GameObject:
   m_ObjectHideFlags: 0

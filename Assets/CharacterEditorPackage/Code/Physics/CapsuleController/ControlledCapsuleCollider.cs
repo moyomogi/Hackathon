@@ -18,6 +18,9 @@ public partial class ControlledCapsuleCollider : ControlledCollider
     CapsuleTransform m_CapsuleTransform = new CapsuleTransform();
     void Awake () 
 	{
+
+        LoadManager.Load();
+
         m_State.Init(this);
         m_PrevLength = m_Length;
         m_CapsuleTransform.SetLength(m_Length, CapsuleResizeMethod.FromCenter);
@@ -122,6 +125,7 @@ public partial class ControlledCapsuleCollider : ControlledCollider
             }
             else//Reorient, try moving again, correct velocity
             {
+
 
                 CapsuleCollisionOccurrance collision = new CapsuleCollisionOccurrance();
                 collision.m_Point = hits[shortestHitIndex].point;

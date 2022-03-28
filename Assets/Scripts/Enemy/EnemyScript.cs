@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private Renderer _renderer;
 
-    public GameObject playerSprite;
+
     
 
     private Sequence _seq;
@@ -44,7 +44,6 @@ public class EnemyScript : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         dis = Vector3.Distance(player.transform.position, transform.position);
         coll = this.GetComponent<Collider>();
     }
