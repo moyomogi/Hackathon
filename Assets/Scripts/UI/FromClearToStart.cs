@@ -9,15 +9,16 @@ public class FromClearToStart : MonoBehaviour
     public void Click()
     {
 
+        
+        if (clicked) return;  // ボタンの連打対策
+        clicked = true;
+        Debug.Log("TitleScene");
+        SceneManager.LoadScene("TitleScene");
         GameManager.instance.playerLevel = 1;
         GameManager.instance.gemsNum = 0;
         for (var i = 0; i < 5; i++)
         {
             GameManager.instance.questIsDone[i] = false;
         }
-        if (clicked) return;  // ボタンの連打対策
-        clicked = true;
-        Debug.Log("TitleScene");
-        SceneManager.LoadScene("TitleScene");
     }
 }

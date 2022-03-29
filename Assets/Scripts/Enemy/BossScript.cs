@@ -31,6 +31,8 @@ public class BossScript : MonoBehaviour
 
     private bool isBossDead = false;
 
+    private Animator bossAnimator;
+
     /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
@@ -50,6 +52,7 @@ public class BossScript : MonoBehaviour
         //playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         dis = Vector3.Distance(player.transform.position, transform.position);
         coll = this.GetComponent<Collider>();
+        bossAnimator = GetComponent<Animator>();
 
         shotSpan = 1.5f;
         bulletSpeed = 20.0f;
@@ -145,7 +148,7 @@ public class BossScript : MonoBehaviour
 
     public void Shot()
     {
-
+        bossAnimator.SetTrigger("Shot");
         var pos = this.gameObject.transform.position;
 
         if (dis <= 30.0f)
