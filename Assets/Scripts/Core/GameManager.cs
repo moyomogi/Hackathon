@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         {
             instance.questIsDone[i] = false;
         }
-    }r
+    }
     private void Update()
     {
         // デバッグ用 R キーセーブ(s->rキーに変更)

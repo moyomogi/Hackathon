@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FromStartToGame : MonoBehaviour
 {
-    [Header("Whether this is load button")] public bool isLoadButton = true;
+    [Header("Whether this is a load button")] public bool isLoadButton = true;
     bool clicked = false;
     public void Click()
     {
