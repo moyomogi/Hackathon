@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour
     {
         gameoverText.SetActive(true);
         Invoke("GameRestart", 1f);
-
     }
 
     public void GameClear()
@@ -27,10 +26,10 @@ public class GameController : MonoBehaviour
 
     public void GameRestart()
     {
-        // Œ»İ‚ÌƒV[ƒ“‚ğæ“¾‚µ‚Äƒ[ƒh‚·‚é
+        // ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³ã‚’å–å¾—ã—ã¦ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
         Scene activeScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(activeScene.name);
-        //DemoScene‚Å€‚ñ‚¾‚È‚çLevel,GemNum,Questƒtƒ‰ƒO‘S•”ƒŠƒZƒbƒg
+        // DemoSceneã§æ­»ã‚“ã ãªã‚‰Level,GemNum,Questãƒ•ãƒ©ã‚°å…¨éƒ¨ãƒªã‚»ãƒƒãƒˆ
         if (SceneManager.GetActiveScene().name == "DemoScene")
         {
             GameManager.instance.playerLevel = 1;
@@ -40,13 +39,13 @@ public class GameController : MonoBehaviour
                 GameManager.instance.questIsDone[i] = false;
             }
         }
-        //ƒ{ƒX‚Å€‚ñ‚¾‚È‚çƒ{ƒX’†‚Éã‚ª‚Á‚½ƒŒƒxƒ‹‚àŠÜ‚ßƒŠƒXƒ^[ƒgi‹~Ï‚àŒ“‚Ë‚Ä
+        // ãƒœã‚¹ã§æ­»ã‚“ã ãªã‚‰ãƒœã‚¹ä¸­ã«ä¸ŠãŒã£ãŸãƒ¬ãƒ™ãƒ«ã‚‚å«ã‚ãƒªã‚¹ã‚¿ãƒ¼ãƒˆï¼ˆæ•‘æ¸ˆã‚‚å…¼ã­ã¦
     }
 
     private void Update()
     {
         if (player.getIsDead()) GameOver();
-        if(SceneManager.GetActiveScene().name == "Boss_Battle")
+        if (SceneManager.GetActiveScene().name == "Boss_Battle")
         {
             if (boss.IsBossDead()) GameClear();
         }

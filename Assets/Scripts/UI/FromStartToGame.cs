@@ -5,20 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class FromStartToGame : MonoBehaviour
 {
+    [Header("Whether this is load button")] public bool isLoadButton = true;
     bool clicked = false;
     public void Click()
     {
-        GameManager.instance.playerLevel = 1;
-        GameManager.instance.gemsNum = 0;
-        for (var i = 0; i < 5; i++)
-        {
-            GameManager.instance.questIsDone[i] = false;
-        }
-        if (clicked) return;  // �{�^���̘A�ő΍�
+        if (clicked) return;  // é€£æ‰“å¯¾ç­–
         clicked = true;
-        Debug.Log("DemoScene");
-        SceneManager.LoadScene("DemoScene");
-
+        if (isLoadButton)
+        {
+            Debug.Log("Load button clicked");
+            LoadManager.Load();
+        }
+        else
+        {
+            Debug.Log("New button clicked");
+            SceneManager.LoadScene("DemoScene");
+        }
     }
 }
-

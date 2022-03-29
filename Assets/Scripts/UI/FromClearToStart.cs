@@ -10,7 +10,7 @@ public class FromClearToStart : MonoBehaviour
     {
 
         
-        if (clicked) return;  // �{�^���̘A�ő΍�
+        if (clicked) return;  // ƒ{ƒ^ƒ“‚Ì˜A‘Å‘Îô
         clicked = true;
         Debug.Log("TitleScene");
         SceneManager.LoadScene("TitleScene");
@@ -20,5 +20,9 @@ public class FromClearToStart : MonoBehaviour
         {
             GameManager.instance.questIsDone[i] = false;
         }
+        if (clicked) return;  // ƒ{ƒ^ƒ“‚Ì˜A‘Å‘Îô
+        clicked = true;
+        Debug.Log("Transition to TitleScene");
+        SceneManager.LoadScene("TitleScene");
     }
 }
