@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     private GameObject player;
 
     public AudioClip audioClip;
+    public AudioClip damagedAudioClip;
     private AudioSource audioSource;
 
     [SerializeField] AbilityModuleManager m_AbilityModuleManager = null;
@@ -252,6 +253,7 @@ public class PlayerScript : MonoBehaviour
                     playerHP -= 10;
                     HitBlink();
                     uIManager.UpdateHP(playerHP);
+                    audioSource.PlayOneShot(damagedAudioClip);
 
                     if (playerHP > 0)
                     {
