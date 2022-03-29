@@ -5479,13 +5479,15 @@ MonoBehaviour:
   lv5Bullet: {fileID: 5403957486218201653, guid: 4f56e618da4858e48be85367fbc8d225,
     type: 3}
   audioClip: {fileID: 8300000, guid: bbbd7f33df9a4de429eb8ff75a0f247f, type: 3}
+  damagedAudioClip: {fileID: 8300000, guid: 99c8c2066f5e7ca4380d25dd92404262, type: 3}
   m_AbilityModuleManager: {fileID: 4694906758203612750}
   uIManager: {fileID: 0}
   _renderer: {fileID: 4694906758225994094}
   mutekiFlag: 0
   mutekiTime: 30
   timeStep: 1
-  questManagement: {fileID: 0}
+  questManagement: {fileID: 777789612001370696, guid: ca0c6b175dbc2784eb5d94899858d2fd,
+    type: 3}
 --- !u!1 &4694906758213319092
 GameObject:
   m_ObjectHideFlags: 0
@@ -15064,7 +15066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4694906758213536744
 Transform:
   m_ObjectHideFlags: 0

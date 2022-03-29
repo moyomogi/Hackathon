@@ -9,7 +9,7 @@ public class FromStartToGame : MonoBehaviour
     bool clicked = false;
     public void Click()
     {
-        if (clicked) return;  // 連打対策
+        if (clicked) return;  // é€£æ‰“å¯¾ç­–
         clicked = true;
         if (isLoadButton)
         {

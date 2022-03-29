@@ -21,7 +21,6 @@ public partial class ControlledCapsuleCollider : ControlledCollider
         // Comment out the following line
         if (GameManager.instance.shouldRepositionPlayer)
         {
-
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player == null)
             {

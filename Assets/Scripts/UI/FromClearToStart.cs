@@ -9,13 +9,18 @@ public class FromClearToStart : MonoBehaviour
     public void Click()
     {
 
+        
+        if (clicked) return;  // ƒ{ƒ^ƒ“‚Ì˜A‘Å‘Îô
+        clicked = true;
+        Debug.Log("TitleScene");
+        SceneManager.LoadScene("TitleScene");
         GameManager.instance.playerLevel = 1;
         GameManager.instance.gemsNum = 0;
         for (var i = 0; i < 5; i++)
         {
             GameManager.instance.questIsDone[i] = false;
         }
-        if (clicked) return;  // �{�^���̘A�őΝ�
+        if (clicked) return;  // ƒ{ƒ^ƒ“‚Ì˜A‘Å‘Îô
         clicked = true;
         Debug.Log("Transition to TitleScene");
         SceneManager.LoadScene("TitleScene");
