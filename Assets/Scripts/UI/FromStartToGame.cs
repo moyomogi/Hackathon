@@ -5,13 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class FromStartToGame : MonoBehaviour
 {
+    [Header("Whether this is load button")] public bool isLoadButton = true;
     bool clicked = false;
     public void Click()
     {
-        if (clicked) return;  // ƒ{ƒ^ƒ“‚Ì˜A‘Å‘Îô
+        if (clicked) return;  // é€£æ‰“å¯¾ç­–
         clicked = true;
-        Debug.Log("DemoScene");
-        SceneManager.LoadScene("DemoScene");
+        if (isLoadButton)
+        {
+            Debug.Log("Load button clicked");
+            LoadManager.Load();
+        }
+        else
+        {
+            Debug.Log("New button clicked");
+            SceneManager.LoadScene("DemoScene");
+        }
     }
 }
-

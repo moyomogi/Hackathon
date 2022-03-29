@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     // GameManager とは、グローバル変数置き場です。
     public static GameManager instance { get; private set; }
     // public static GameManager instance = null;  // 等価
+
+    // When the game is loaded, reposition the player
+    public bool shouldRepositionPlayer = false;
+
+    public float[] playerPosition = new float[3];
     public int playerLevel = 1;
     public int gemsNum = 0;
 
@@ -15,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     // Usage:
     //   GameManager.instance.gemsNum++;
-    //   のように、GetComponent などをせずとも変数を指定可能。
+    //   のように、GetComponent せずとも変数を指定可能。
     private void Awake()
     {
         // GameManager: シーンが変わっても保持される singleton
@@ -34,13 +39,18 @@ public class GameManager : MonoBehaviour
 
     public void Intailize()
     {
-        GameManager.instance.playerLevel = 1;
-        GameManager.instance.gemsNum = 0;
+        instance.shouldRepositionPlayer = false;
+        for (var i = 0; i < 3; i++)
+        {
+            instance.playerPosition[i] = 0.0f;
+        }
+        instance.playerLevel = 1;
+        instance.gemsNum = 0;
         for (var i = 0; i < 5; i++)
         {
-            GameManager.instance.questIsDone[i] = false;
+            instance.questIsDone[i] = false;
         }
-    }
+    }r
     private void Update()
     {
         // デバッグ用 R キーセーブ(s->rキーに変更)
@@ -49,6 +59,4 @@ public class GameManager : MonoBehaviour
             SaveManager.Save();
         }
     }
-
- 
 }

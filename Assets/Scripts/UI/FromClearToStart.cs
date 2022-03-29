@@ -15,9 +15,9 @@ public class FromClearToStart : MonoBehaviour
         {
             GameManager.instance.questIsDone[i] = false;
         }
-        if (clicked) return;  // ボタンの連打対策
+        if (clicked) return;  // ボタンの連打対暉
         clicked = true;
-        Debug.Log("TitleScene");
+        Debug.Log("Transition to TitleScene");
         SceneManager.LoadScene("TitleScene");
     }
 }
