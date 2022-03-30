@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# moyomogi
+.vscode/tasks.json
+cptest.sh
+input.txt

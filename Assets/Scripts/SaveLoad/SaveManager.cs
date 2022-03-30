@@ -19,7 +19,7 @@ public static class SaveManager
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(saveFilePath);
 
-        // •Û‘¶‚·‚é“à—e‚ğƒZƒbƒg
+        // ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿å–å¾—
         SaveData saveData = new SaveData();
 
         // Output

@@ -26,7 +26,7 @@ public class QuestManagement : MonoBehaviour
         questList[1] = new Quest("Kill", "1体敵を倒す");
         questList[2] = new Quest("Slide", "3回スライディングを行う");
         questList[3] = new Quest("WallRun", "3回壁走りをする");
-        questList[4] = new Quest("Coin", "5個コインを取得する");
+        questList[4] = new Quest("Gem", "5個ジェムを取得する");
 
         for(var i=0;i < totalQuestNum; i++)
         {

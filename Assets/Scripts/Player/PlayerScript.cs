@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     private GameObject player;
 
     public AudioClip audioClip;
+    public AudioClip damagedAudioClip;
     private AudioSource audioSource;
 
     [SerializeField] AbilityModuleManager m_AbilityModuleManager = null;
@@ -33,7 +34,7 @@ public class PlayerScript : MonoBehaviour
 
     //private int playerLevel = 1;
 
-    //Quest—p•Ï”
+    //QuestÂ—pÂ•ÄÂÂ”
     [SerializeField] private QuestManagement questManagement = null;
 
     private int jumpCount = 0;
@@ -65,35 +66,35 @@ public class PlayerScript : MonoBehaviour
         isCountWallRun = true;
 
 
-        //Boss_Scene“ü‚Á‚½‚àƒŒƒxƒ‹ˆÛ
+        //Boss_SceneÂ“Ã¼Â‚ÃÂ‚ËÂÂÂ‚Å•ÂƒÂŒÂƒxÂƒÂ‹ÂˆÅ°ÂÂ
 
         uIManager.UpdatePlayerLevelUI(GameManager.instance.playerLevel);
 
         if (GameManager.instance.playerLevel == 2)
         {
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
-            //uIManager.LevelUpExplainText("level 1 ¨ 2 BulletSpeed Up!!");
+            //uIManager.LevelUpExplainText("level 1 -> 2 BulletSpeed Up!!");
         }
         else if (GameManager.instance.playerLevel == 3)
         {
             bullet = lv3Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(2);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
-            //uIManager.LevelUpExplainText("level 2 ¨ 3 BulletDamage Up!!");
+            //uIManager.LevelUpExplainText("level 2 -> 3 BulletDamage Up!!");
         }
         else if (GameManager.instance.playerLevel == 4)
         {
             bullet = lv3Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(2);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
-            //uIManager.LevelUpExplainText("level 3 ¨ 4 BulletSpeed Up!!");
+            //uIManager.LevelUpExplainText("level 3 -> 4 BulletSpeed Up!!");
         }
         else if (GameManager.instance.playerLevel == 5)
         {
             bullet = lv5Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(3);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
-            //uIManager.LevelUpExplainText("level 4 ¨ 5 BulletDamage Up!!");
+            //uIManager.LevelUpExplainText("level 4 -> 5 BulletDamage Up!!");
         }
         else if (GameManager.instance.playerLevel == 6)//MAX
         {
@@ -101,33 +102,33 @@ public class PlayerScript : MonoBehaviour
             bullet.GetComponent<BulletScript>().SetBulletDamage(3);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
             bullet.transform.localScale = new Vector3(10f, 10f, 1.0f);
-            //uIManager.LevelUpExplainText("level 5 ¨ MAX BulletSize Up!!");
+            //uIManager.LevelUpExplainText("level 5 -> MAX BulletSize Up!!");
         }
     }
     private void Update()
     {
-        if(m_AbilityModuleManager != null)
+        if (m_AbilityModuleManager != null)
         {
             module = m_AbilityModuleManager.GetCurrentModule();
         }
-        
+
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if(m_AbilityModuleManager != null)
+            if (m_AbilityModuleManager != null)
             {
                 //AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
-                if(module == null || module.GetName() == "Sprint")
+                if (module == null || module.GetName() == "Sprint")
                 {
                     Shot();
                 }
-                else if(module.GetName() == "Crouch" || module.GetName() == "Slide")
+                else if (module.GetName() == "Crouch" || module.GetName() == "Slide")
                 {
                     CronchShot();
                 }
             }
         }
-        //ƒ_ƒ[ƒWŒã‚Ì–³“GŠÔXV
-        if(mutekiFlag == 1)
+        //Âƒ_ÂƒÂÂ[ÂƒWÂŒÄƒÂ‚ÄšÂ–Å‚Â“GÂÂÂŠÃ”ÂXÂV
+        if (mutekiFlag == 1)
         {
             mutekiTime -= timeStep;
             if (mutekiTime < 0)
@@ -138,10 +139,10 @@ public class PlayerScript : MonoBehaviour
             //Debug.Log(mutekiTime);
         }
 
-        //jump”»’è
+        //jumpÂ”Å¥Â’Ä
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(m_AbilityModuleManager != null)
+            if (m_AbilityModuleManager != null)
             {
                 //AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
                 if (module == null || module.GetName() == "WallRun" || module.GetName() == "WallSlide")
@@ -152,9 +153,9 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        
-        //Slide,WallRun”»’è
-        if(m_AbilityModuleManager != null)
+
+        //Slide,WallRunÂ”Å¥Â’Ä
+        if (m_AbilityModuleManager != null)
         {
             //AbilityModule module = m_AbilityModuleManager.GetCurrentModule();
             if (module != null)
@@ -188,10 +189,10 @@ public class PlayerScript : MonoBehaviour
                 isCountSlide = true;
                 isCountWallRun = true;
             }
-            
+
         }
 
-        //Questˆ—
+        //QuestÂÂˆÂ—Â
         if (jumpCount >= 10 && !questManagement.IsQuestFlag(0))
         {
             questManagement.SetQuestFlag(0);
@@ -220,14 +221,14 @@ public class PlayerScript : MonoBehaviour
             LevelUp();
             //Debug.Log(playerLevel);
         }
-        //Quest4‚ÌƒRƒCƒ“‚Ìˆ—
-        else if(GameManager.instance.gemsNum >= 5 && !questManagement.IsQuestFlag(4))
+        //Quest4Â‚ÄšÂƒRÂƒCÂƒÂ“Â‚ÄšÂÂˆÂ—Â
+        else if (GameManager.instance.gemsNum >= 5 && !questManagement.IsQuestFlag(4))
         {
             questManagement.SetQuestFlag(4);
             Debug.Log(questManagement.GetQuest(4).GetInformation());
             LevelUp();
         }
-        
+
 
         //Debug
         if (Input.GetKeyDown(KeyCode.P))
@@ -241,21 +242,22 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(playerHP > 0)
+        if (playerHP > 0)
         {
             if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
             {
-                if(mutekiFlag == 0)
+                if (mutekiFlag == 0)
                 {
                     mutekiFlag = 1;
 
                     playerHP -= 10;
                     HitBlink();
                     uIManager.UpdateHP(playerHP);
+                    audioSource.PlayOneShot(damagedAudioClip);
 
                     if (playerHP > 0)
                     {
-                        Debug.Log("c‚èHP:" + playerHP);
+                        Debug.Log("ÂcÂ‚ÄHP:" + playerHP);
                     }
                     else
                     {
@@ -263,12 +265,9 @@ public class PlayerScript : MonoBehaviour
                         Debug.Log("GameOver");
                     }
                 }
-                
+
             }
         }
-
-        
-
     }
 
     private void HitBlink()
@@ -300,36 +299,36 @@ public class PlayerScript : MonoBehaviour
     {
         if (GameManager.instance.playerLevel >= 6) return;
         GameManager.instance.playerLevel += 1;
-        //Œø‰Ê‰¹&ƒGƒtƒFƒNƒg
+        //ÂŒÅ™Â‰Ä˜Â‰Å¡&ÂƒGÂƒtÂƒFÂƒNÂƒg
         uIManager.UpdatePlayerLevelUI(GameManager.instance.playerLevel);
         if (GameManager.instance.playerLevel == 2)
         {
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
-            uIManager.LevelUpExplainText("level 1 ¨ 2 BulletSpeed Up!!");
+            uIManager.LevelUpExplainText("level 1 -> 2 BulletSpeed Up!!");
         }
         else if (GameManager.instance.playerLevel == 3)
         {
             bullet = lv3Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(2);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(50.0f);
-            uIManager.LevelUpExplainText("level 2 ¨ 3 BulletDamage Up!!");
+            uIManager.LevelUpExplainText("level 2 -> 3 BulletDamage Up!!");
         }
         else if (GameManager.instance.playerLevel == 4)
         {
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
-            uIManager.LevelUpExplainText("level 3 ¨ 4 BulletSpeed Up!!");
+            uIManager.LevelUpExplainText("level 3 -> 4 BulletSpeed Up!!");
         }
         else if (GameManager.instance.playerLevel == 5)
         {
             bullet = lv5Bullet;
             bullet.GetComponent<BulletScript>().SetBulletDamage(3);
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
-            uIManager.LevelUpExplainText("level 4 ¨ 5 BulletDamage Up!!");
+            uIManager.LevelUpExplainText("level 4 -> 5 BulletDamage Up!!");
         }
         else if (GameManager.instance.playerLevel == 6)//MAX
         {
             bullet.transform.localScale = new Vector3(10f, 10f, 1.0f);
-            uIManager.LevelUpExplainText("level 5 ¨ MAX BulletSize Up!!");
+            uIManager.LevelUpExplainText("level 5 -> MAX BulletSize Up!!");
         }
 
     }
@@ -345,5 +344,5 @@ public class PlayerScript : MonoBehaviour
         return destroyEnemyCount;
     }
 
-    
+
 }

@@ -81,10 +81,10 @@ public class EnemyScript : MonoBehaviour
                 HitBlink();
             }
         }
-        else if (other.gameObject.CompareTag("Player"))
+        /*else if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine("Blow");
-        }
+        }*/
 
 
     }

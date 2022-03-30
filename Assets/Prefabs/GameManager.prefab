@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d8953ff1fe3b84dba2625588d1f953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLevel: 0
+  playerLevel: 1
   gemsNum: 0
+  questIsDone: 0000000000
