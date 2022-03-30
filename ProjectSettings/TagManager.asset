@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Enemy
   - EnemyBullet
+  - Gem
+  - AudioManager
   layers:
   - Default
   - TransparentFX

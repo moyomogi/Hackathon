@@ -44,8 +44,12 @@ public class GroundedCharacterController : CharacterControllerBase
 
     protected ButtonInput m_JumpInput;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip jumpAudioClip;
+
     //Called by Unity upon adding a new component to an object, or when Reset is selected in the context menu. Used here to provide default values.
     //Also used when fixing up components using the CharacterFixEditor button
+
     void Reset()
     {
         m_WalkForce = 90.0f;
@@ -192,6 +196,9 @@ public class GroundedCharacterController : CharacterControllerBase
 
     public void Jump(Vector2 a_Velocity, bool a_OverridePreviousVelocity = true, bool a_AllowLowJumps = true, bool a_ConsumeJumpInput = true)
     {
+
+        audioSource.PlayOneShot(jumpAudioClip,0.1f);
+
         if (a_AllowLowJumps)
         {
             m_JumpCutPossible = true;

@@ -5140,6 +5140,8 @@ MonoBehaviour:
   m_JumpAlignedToGroundFactor: 0.1
   m_HorizontalJumpBoostFactor: 0.06
   m_ResetVerticalSpeedOnJumpIfMovingDown: 1
+  audioSource: {fileID: 4694906756923337721}
+  jumpAudioClip: {fileID: 8300000, guid: 71d92195a913d08479d89e87a7e3b9de, type: 3}
 --- !u!114 &4694906758203647672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5480,6 +5482,7 @@ MonoBehaviour:
     type: 3}
   audioClip: {fileID: 8300000, guid: bbbd7f33df9a4de429eb8ff75a0f247f, type: 3}
   damagedAudioClip: {fileID: 8300000, guid: 99c8c2066f5e7ca4380d25dd92404262, type: 3}
+  gemAudioClip: {fileID: 8300000, guid: 01081183a9a869542b04c38088199b73, type: 3}
   m_AbilityModuleManager: {fileID: 4694906758203612750}
   uIManager: {fileID: 0}
   _renderer: {fileID: 4694906758225994094}
@@ -5913,7 +5916,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -5966,7 +5969,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -10226,7 +10229,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

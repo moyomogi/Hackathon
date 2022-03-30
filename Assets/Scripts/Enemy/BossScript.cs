@@ -33,6 +33,8 @@ public class BossScript : MonoBehaviour
 
     private Animator bossAnimator;
 
+    public AudioClip bossDieSE;
+
     /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
@@ -98,6 +100,7 @@ public class BossScript : MonoBehaviour
             {
                 player.gameObject.GetComponent<PlayerScript>().PlusEnemyCount();
                 bossAnimator.SetTrigger("IsDead");
+                GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioSource>().PlayOneShot(bossDieSE);
                 Invoke("Destory", 2.5f);
             }
             else

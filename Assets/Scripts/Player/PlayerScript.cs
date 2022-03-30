@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     public AudioClip audioClip;
     public AudioClip damagedAudioClip;
     private AudioSource audioSource;
+    public AudioClip gemAudioClip;
 
     [SerializeField] AbilityModuleManager m_AbilityModuleManager = null;
 
@@ -268,6 +269,15 @@ public class PlayerScript : MonoBehaviour
 
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Gem")
+        {
+            audioSource.PlayOneShot(gemAudioClip,0.3f);
+        }
+        
     }
 
     private void HitBlink()
