@@ -64,7 +64,7 @@ public class BossScript : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > shotSpan)
         {
-            if (dis <= 30.0f)
+            if (dis <= 30.0f && bossHp >= 0)
             {
                 Shot(); 
             }
@@ -97,8 +97,8 @@ public class BossScript : MonoBehaviour
             if (bossHp <= 0)
             {
                 player.gameObject.GetComponent<PlayerScript>().PlusEnemyCount();
-                Destroy(gameObject);
-                isBossDead = true;
+                bossAnimator.SetTrigger("IsDead");
+                Invoke("Destory", 2.5f);
             }
             else
             {
@@ -111,6 +111,14 @@ public class BossScript : MonoBehaviour
         }
 
 
+    }
+
+    //Invoke—p
+    public void Destory()
+    {
+        Destroy(gameObject);
+        Time.timeScale = 0;
+        isBossDead = true;
     }
 
 
