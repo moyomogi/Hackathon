@@ -12,8 +12,7 @@ public class FromStartToGame : MonoBehaviour
         if (clicked) return;  // é€£æ‰“å¯¾ç­–
         clicked = true;
         if (isLoadButton)
-        {
-            Debug.Log("Load button clicked");
+        {            Debug.Log("Load button clicked");
             LoadManager.Load();
         }
         else

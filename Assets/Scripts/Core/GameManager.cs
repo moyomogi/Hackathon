@@ -58,5 +58,9 @@ public class GameManager : MonoBehaviour
         {
             SaveManager.Save();
         }
+        if(playerLevel > 6)
+        {
+            playerLevel = 6;
+        }
     }
 }
