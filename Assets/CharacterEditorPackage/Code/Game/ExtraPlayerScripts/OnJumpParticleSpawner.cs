@@ -9,6 +9,7 @@ public class OnJumpParticleSpawner : MonoBehaviour {
     [SerializeField] ControlledCapsuleCollider m_Collider = null;
     [SerializeField] ParticleSystem m_ParticleSystem = null;
     [SerializeField] int m_EmissionCount = 0;
+
     void OnEnable()
     {
         m_CharacterController.OnJump += SpawnParticles;
