@@ -7,7 +7,6 @@ using System.Collections.Generic;
 
 public class OneWayPlatform : MonoBehaviour {
     [SerializeField] Collider m_PlatformCollider = null;
-    [SerializeField] GameObject bossUICanvas = null;
 
     List<Collider> m_IgnoredColliders = new List<Collider>();
 
@@ -19,10 +18,6 @@ public class OneWayPlatform : MonoBehaviour {
     void OnTriggerExit(Collider a_Collider)
     {
         EnableForObject(a_Collider);
-        if(bossUICanvas != null)
-        {
-            bossUICanvas.SetActive(true);
-        }
     }
 
     void OnEnable()

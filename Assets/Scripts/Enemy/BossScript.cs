@@ -64,7 +64,7 @@ public class BossScript : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > shotSpan)
         {
-            if (dis <= 30.0f && bossHp > 0)
+            if (dis <= 30.0f)
             {
                 Shot(); 
             }
@@ -97,8 +97,8 @@ public class BossScript : MonoBehaviour
             if (bossHp <= 0)
             {
                 player.gameObject.GetComponent<PlayerScript>().PlusEnemyCount();
-                bossAnimator.SetTrigger("IsDead");
-                Invoke("BossDead", 2.5f);
+                Destroy(gameObject);
+                isBossDead = true;
             }
             else
             {
@@ -113,13 +113,6 @@ public class BossScript : MonoBehaviour
 
     }
 
-    //BossDeadéûÇ…InvakeÇ≈åƒÇ—èoÇ≥ÇÍÇÈä÷êî
-    public void BossDead()
-    {
-        Destroy(gameObject);
-        Time.timeScale = 0;
-        isBossDead = true;
-    }
 
     //https://sunagitsune.com/unitycollisionvector2d/
 
