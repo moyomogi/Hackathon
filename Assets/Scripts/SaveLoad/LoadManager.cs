@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public static class LoadManager
 {
@@ -21,17 +22,14 @@ public static class LoadManager
         // Input
         SaveData saveData = (SaveData)bf.Deserialize(file);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null)
-        {
-            Debug.LogError("(LoadManager) Player ƒ^ƒO‚Ì•t‚¢‚½ GameObject ‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½");
-        }
-        else
-        {
-            player.transform.position = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
-        }
+        GameManager.instance.playerPosition = saveData.playerPosition;
         GameManager.instance.playerLevel = saveData.playerLevel;
         GameManager.instance.gemsNum = saveData.gemsNum;
 
         file.Close();
+
+        GameManager.instance.shouldRepositionPlayer = true;
+        Debug.Log("Transition to " + saveData.sceneName);
+        SceneManager.LoadScene(saveData.sceneName);
     }
 }
