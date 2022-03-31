@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         else playerLevelText.text = (GameManager.instance.playerLevel).ToString();
     }
 
-    public void LevelUpExplainText( string info)
+    public void LevelUpExplainText(string info)
     {
         levelUpExplainText.text = info;
         StartCoroutine("TextSet");

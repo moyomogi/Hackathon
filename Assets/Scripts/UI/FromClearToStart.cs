@@ -7,8 +7,8 @@ public class FromClearToStart : MonoBehaviour
 {
     bool clicked = false;
     public void Click()
-    { 
-        if (clicked) return;  // ƒ{ƒ^ƒ“‚Ì˜A‘ÁE��Îô
+    {
+        if (clicked) return;
         clicked = true;
         Time.timeScale = 1;
         Debug.Log("TitleScene");
