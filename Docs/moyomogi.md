@@ -41,7 +41,7 @@
 
 ## .exe にて、サイズをを指定する方法
 `File > Build Settings...` を押すと、以下のような画面が出てくるので 960x540 と設定。  
-cf [](https://futabazemi.net/notes/unity-aspect/)
+cf [【Unity C#】ビルドの画面サイズ](https://futabazemi.net/notes/unity-aspect/)
 ![Project Settings](https://i.imgur.com/FH8ORSS.png)
 
 ## タイトル画面にて、十字キーでも選択できるようにした
