@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private Renderer _renderer;
 
-
+    [SerializeField] private AudioClip dieSE;
     
 
     private Sequence _seq;
@@ -74,6 +74,7 @@ public class EnemyScript : MonoBehaviour
             if (enemyHp <= 0)
             {
                 player.gameObject.GetComponent<PlayerScript>().PlusEnemyCount();
+                GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioSource>().PlayOneShot(dieSE);
                 Destroy(gameObject);
             }
             else

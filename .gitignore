@@ -58,6 +58,13 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
 # moyomogi
+# 1. Folders
+# ビルドは Build フォルダにて行ってください
+/Build
+
+# 1. Files
+/.vscode/tasks.json
 cptest.sh
 input.txt

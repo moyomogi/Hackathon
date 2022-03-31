@@ -155,4 +155,4 @@ MonoBehaviour:
   enemyBullet: {fileID: 4277102318675840971, guid: 570823b88353b3644b5c9f7966c06e71,
     type: 3}
   _renderer: {fileID: 6318863700555079928}
-  playerSprite: {fileID: 0}
+  dieSE: {fileID: 8300000, guid: 10f67a1067c7fb04c83a47e89e0101bf, type: 3}
