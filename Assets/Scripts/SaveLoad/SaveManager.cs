@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public static class SaveManager
 {
@@ -21,6 +22,17 @@ public static class SaveManager
 
         // セーブデータ取得
         SaveData saveData = new SaveData();
+        saveData.sceneName = SceneManager.GetActiveScene().name;
+        saveData.playerLevel = GameManager.instance.playerLevel;
+        saveData.gemsNum = GameManager.instance.gemsNum;
+        saveData.obtainedGemNames = GameManager.instance.obtainedGemNames;
+        saveData.questIsDone = GameManager.instance.questIsDone;
+        string s = "";
+        foreach (string name in saveData.obtainedGemNames)
+        {
+            s += name + " ";
+        }
+        Debug.Log("SaveData: " + s);
 
         // Output
         bf.Serialize(file, saveData);

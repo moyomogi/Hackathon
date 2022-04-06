@@ -26,20 +26,7 @@ public class GameController : MonoBehaviour
 
     public void GameRestart()
     {
-        // 現在のシーンを取得してロードする
-        Scene activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.name);
-        // DemoSceneで死んだならLevel,GemNum,Questフラグ全部リセット
-        if (SceneManager.GetActiveScene().name == "DemoScene")
-        {
-            GameManager.instance.playerLevel = 1;
-            GameManager.instance.gemsNum = 0;
-            for (var i = 0; i < 5; i++)
-            {
-                GameManager.instance.questIsDone[i] = false;
-            }
-        }
-        // ボスで死んだならボス中に上がったレベルも含めリスタート（救済も兼ねて
+        GameManager.instance.shouldLoad = true;
     }
 
     private void Update()

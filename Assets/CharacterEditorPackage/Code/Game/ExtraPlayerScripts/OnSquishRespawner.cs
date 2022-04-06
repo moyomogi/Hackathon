@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+// using UnityEngine.SceneManagement;
+
 //--------------------------------------------------------------------
 //Detects when the capsule is being squished (using CapsuleVolumeIntegrity) and attempts to respawn
 //Use timer to prevent overzealous respawning
 //--------------------------------------------------------------------
-public class OnSquishRespawner : MonoBehaviour {
+public class OnSquishRespawner : MonoBehaviour
+{
     [SerializeField] CapsuleVolumeIntegrity m_VolumePreserver = null;
     [SerializeField] float m_SquishTime = 0.0f;
     float m_LastSquishTime;
     bool m_IsSquishing;
-	void FixedUpdate () 
-	{
-	    if (m_VolumePreserver.IsBeingSquished())
+    void FixedUpdate()
+    {
+        if (m_VolumePreserver.IsBeingSquished())
         {
             if (!m_IsSquishing)
             {
@@ -27,10 +30,10 @@ public class OnSquishRespawner : MonoBehaviour {
         {
             Respawn();
         }
-	}
+    }
 
     void Respawn()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        GameManager.instance.shouldLoad = true;
     }
 }

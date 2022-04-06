@@ -45,7 +45,7 @@ cf [【Unity C#】ビルドの画面サイズ](https://futabazemi.net/notes/unit
 ![Project Settings](https://i.imgur.com/FH8ORSS.png)
 
 ## タイトル画面にて、十字キーでも選択できるようにした
-[START MENU in Unity](https://youtu.be/zc8ac_qUXQY)
+cf [START MENU in Unity](https://youtu.be/zc8ac_qUXQY)
 
 ## `Test Mesh Pro` の方を使おう
 - deprecated (非推奨) な `Text` ではなく、後発の `Test Mesh Pro` を使っています。
