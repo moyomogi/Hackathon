@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
     public GameObject gameoverText;
     public PlayerScript player;
     public BossScript boss;
-
     public GameObject gameClearUI;
 
     public void GameOver()
@@ -17,22 +15,23 @@ public class GameController : MonoBehaviour
         gameoverText.SetActive(true);
         Invoke("GameRestart", 1f);
     }
-
     public void GameClear()
     {
-        //SceneManager.LoadScene("ClearScene");
+        var obj = GameObject.Find("BossCanvas");
+        if (obj != null)
+        {
+            obj.SetActive(false);
+        }
         gameClearUI.SetActive(true);
     }
-
     public void GameRestart()
     {
         GameManager.instance.shouldLoad = true;
     }
-
     private void Update()
     {
         if (player.getIsDead()) GameOver();
-        if (SceneManager.GetActiveScene().name == "Boss_Battle")
+        if (SceneManager.GetActiveScene().name == "BossScene")
         {
             if (boss.IsBossDead()) GameClear();
         }

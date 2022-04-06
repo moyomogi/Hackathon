@@ -11,7 +11,7 @@ public class ExitScript : MonoBehaviour
         float dis = Vector3.Distance(player, this.transform.position);
         if (dis < 1)
         {
-            SceneManager.LoadScene("Boss_Battle");
+            SceneManager.LoadScene("BossScene");
         }
 
     }

@@ -4066,12 +4066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1593253994}
-  isActivated: 0
-  isFalling: 0
-  isRising: 0
-  fall_distance: 0
-  hit_distance: 0
-  now_distance: 0
   fallingSpeed: 0.035
   risingSpeed: 0.01
 --- !u!1001 &600953517
@@ -38307,6 +38301,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975026062}
   m_CullTransparentMesh: 1
+--- !u!1 &1975286697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4694906758213277800, guid: 7abeb424dc50384499f549199b9c2dba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1708355906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1980791514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2173742175204271313, guid: 0f8bee8630a6b7e458530d1429c2d32c,
@@ -40189,6 +40189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 426059146}
     m_Modifications:
+    - target: {fileID: 1774150108462456832, guid: eec5132884ababf4596246744da02ec5,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1975286697}
     - target: {fileID: 2963891403375609712, guid: eec5132884ababf4596246744da02ec5,
         type: 3}
       propertyPath: m_RootOrder

@@ -8,13 +8,11 @@ public class FallingStoneScript : MonoBehaviour
     private bool isActivated = false;
     private bool isFalling = false;
     private bool isRising = false;
-    public int fallDistance;
-    public float hitDistance;
-    public float nowDistance = 0;
+    private int fallDistance = 8;
+    private float hitDistance = 13;
+    private float nowDistance = 0;
     public float fallingSpeed = 0.035f;
     public float risingSpeed = 0.01f;
-
-
 
     void Update()
     {
@@ -38,7 +36,6 @@ public class FallingStoneScript : MonoBehaviour
             Rise();
         }
     }
-
     void Fall()
     {
         if (nowDistance >= fallDistance)
@@ -66,6 +63,5 @@ public class FallingStoneScript : MonoBehaviour
         pos.y += risingSpeed;
         myTransform.position = pos;
         nowDistance -= risingSpeed;
-
     }
 }
