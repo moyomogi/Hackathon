@@ -4994,7 +4994,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &704295991 stripped
 Transform:
@@ -5527,7 +5527,7 @@ PrefabInstance:
     - target: {fileID: 4157978686432227721, guid: d2210d35ed1a60146b8c1caf408f7634,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4157978686432227721, guid: d2210d35ed1a60146b8c1caf408f7634,
         type: 3}
@@ -5708,7 +5708,7 @@ Transform:
   m_Children:
   - {fileID: 852062512}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &825643589 stripped
 Transform:
@@ -32298,7 +32298,7 @@ PrefabInstance:
     - target: {fileID: 777789612001370697, guid: ca0c6b175dbc2784eb5d94899858d2fd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 777789612001370697, guid: ca0c6b175dbc2784eb5d94899858d2fd,
         type: 3}
@@ -34191,7 +34191,7 @@ Transform:
   m_Children:
   - {fileID: 845460672}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450544444
 GameObject:
@@ -39189,7 +39189,7 @@ Transform:
   - {fileID: 1105310489}
   - {fileID: 729764867}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061160180
 GameObject:
@@ -40287,15 +40287,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6935391023901953476, guid: 6ea435dd828291f4190325a9cc7b416a,
-        type: 3}
-      propertyPath: playerLevel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6935391023901953477, guid: 6ea435dd828291f4190325a9cc7b416a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6935391023901953477, guid: 6ea435dd828291f4190325a9cc7b416a,
         type: 3}

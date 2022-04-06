@@ -16,5 +16,4 @@
 - [Warped Caves](https://assetstore.unity.com/packages/2d/characters/warped-caves-103250)  
 
 ## 配布先
-このゲームは、RVW 2022 Spring にて配布されています。
-[]()
+このゲームは、[RVW 2022 Spring](https://rvw2022s.herokuapp.com/) にて配布されています。

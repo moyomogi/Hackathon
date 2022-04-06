@@ -22,13 +22,13 @@ public class QuestManagement : MonoBehaviour
 
         questUI = transform.Find("QuestUI").gameObject;
 
-        questList[0] = new Quest("Jump", "10ńWvđs¤");
-        questList[1] = new Quest("Kill", "1ĚGđ|ˇ");
-        questList[2] = new Quest("Slide", "3ńXCfBOđs¤");
-        questList[3] = new Quest("WallRun", "3ńÇčđˇé");
-        questList[4] = new Quest("Gem", "5ÂWFđćžˇé");
+        questList[0] = new Quest("Jump", "10回ジャンプを行う");
+        questList[1] = new Quest("Kill", "1体敵を倒す");
+        questList[2] = new Quest("Slide", "3回スライディングを行う");
+        questList[3] = new Quest("WallRun", "3回壁走りする");
+        questList[4] = new Quest("Gem", "5個ジェムを取得する");
 
-        for (var i = 0; i < totalQuestNum; i++)
+        for (int i = 0; i < totalQuestNum; i++)
         {
             Debug.Log(questList[i].GetTitle() + ":" + questList[i].GetInformation());
         }
@@ -38,26 +38,27 @@ public class QuestManagement : MonoBehaviour
 
     private void Update()
     {
+        // Show Quests
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Show(0);
+            Show();
             questUI.SetActive(!questUI.activeSelf);
         }
     }
 
-    public void SetQuestFlag(int n)
+    public void SetQuestFlag(int idx)
     {
-        GameManager.instance.questIsDone[n] = true;
+        GameManager.instance.questIsDone[idx] = true;
     }
 
-    public bool IsQuestFlag(int n)
+    public bool IsQuestFlag(int idx)
     {
-        return GameManager.instance.questIsDone[n];
+        return GameManager.instance.questIsDone[idx];
     }
 
-    public Quest GetQuest(int n)
+    public Quest GetQuest(int idx)
     {
-        return questList[n];
+        return questList[idx];
     }
 
     public int GetTotalQuestNum()
@@ -65,10 +66,10 @@ public class QuestManagement : MonoBehaviour
         return totalQuestNum;
     }
 
-    public void Show(int n)
+    public void Show()
     {
         questInstanceList = new Transform[num];
-        for (var i = 0; i < num; i++)
+        for (int i = 0; i < num; i++)
         {
             questInstanceList[i] = transform.Find("QuestUI/BackGround/QuestSet/Quest" + i);
 
@@ -76,13 +77,11 @@ public class QuestManagement : MonoBehaviour
             var toggleTextCom = questInstanceList[i].Find("TitlePanel/Toggle/Label").GetComponent<Text>();
             var informationTextCom = questInstanceList[i].Find("InformationPanel/Information").GetComponent<Text>();
 
-            var questNum = i;
-
-            if (questNum < GetTotalQuestNum())
+            if (i < GetTotalQuestNum())
             {
-                var check = IsQuestFlag(questNum);
-                var title = GetQuest(questNum).GetTitle();
-                var info = GetQuest(questNum).GetInformation();
+                var check = IsQuestFlag(i);
+                var title = GetQuest(i).GetTitle();
+                var info = GetQuest(i).GetInformation();
 
                 toggleCom.isOn = check;
                 toggleTextCom.text = title;

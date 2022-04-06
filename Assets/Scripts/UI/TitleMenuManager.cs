@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class TitleMenuManager : MonoBehaviour
 {
     public GameObject[] buttonObjects = new GameObject[3];
-    bool newGameButtonClicked = false, loadGameButtonClicked = false, quitButtonClicked = false;
+    bool newGameButtonClicked = false, loadGameButtonClicked = false;
     int index = -1;
     void Awake()
     {
@@ -63,8 +63,6 @@ public class TitleMenuManager : MonoBehaviour
     public void OnClickQuitButton()
     {
         // Take precautions in case the button is pressed more than once.
-        if (quitButtonClicked) return;
-        quitButtonClicked = true;
         Debug.Log("Quit button is clicked");
         Application.Quit();
     }

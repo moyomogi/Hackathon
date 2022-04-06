@@ -12,26 +12,21 @@ public class BulletScript : MonoBehaviour
 
     private void Start()
     {
-
-
         player = GameObject.FindGameObjectWithTag("PlayerSprite");
 
         Rigidbody rb = GetComponent<Rigidbody>();
-
-
-
         rb.velocity = new Vector3(bulletSpeed * player.transform.localScale.x, 0, 0);
 
-        /*Vector3 tmp = transform.localScale;
-        tmp.x = player.transform.localScale.x;
-        transform.localScale = tmp;*/
+        // Vector3 tmp = transform.localScale;
+        // tmp.x = player.transform.localScale.x;
+        // transform.localScale = tmp;
 
         Destroy(gameObject, 5);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag != "Player") 
+        if (other.gameObject.tag != "Player")
         {
             Debug.Log(other.gameObject.tag);
             Destroy(gameObject);
