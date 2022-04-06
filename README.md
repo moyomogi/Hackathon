@@ -7,4 +7,14 @@
   <img src="https://i.imgur.com/jacfkI6.png" title="streamable.com" width="480">
 </a>
 
-- よもぎメモ [Docs/moyomogi.md](https://github.com/Nisk36/Hackathon/blob/master/Docs/moyomogi.md)
+## よもぎメモ
+[Docs/moyomogi.md](https://github.com/Nisk36/Hackathon/blob/master/Docs/moyomogi.md)
+
+## JumpDump にて使用した assets
+- [2D Flexible Platformer Controller](https://assetstore.unity.com/packages/templates/systems/2d-flexible-platformer-controller-67414)  
+- [Sunny Land](https://assetstore.unity.com/packages/2d/characters/sunny-land-103349)  
+- [Warped Caves](https://assetstore.unity.com/packages/2d/characters/warped-caves-103250)  
+
+## 配布先
+このゲームは、RVW 2022 Spring にて配布されています。
+[]()

@@ -7,7 +7,7 @@ public class Quest : Object
     private string title;
     private string information;
 
-    public Quest(string title="ƒ^ƒCƒgƒ‹‚È‚µ",string info = "“à—e‚È‚µ")
+    public Quest(string title = "ã‚¿ã‚¤ãƒˆãƒ«ãªã—", string info = "å†…å®¹ãªã—")
     {
         this.title = title;
         this.information = info;
@@ -17,7 +17,7 @@ public class Quest : Object
     {
         return title;
     }
-    
+
     public string GetInformation()
     {
         return information;

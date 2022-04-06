@@ -28,6 +28,14 @@ public partial class ControlledCapsuleCollider : ControlledCollider
             }
             else
             {
+                foreach (string gemName in GameManager.instance.obtainedGemNames)
+                {
+                    GameObject gemObj = GameObject.Find(gemName);
+                    if (gemObj != null)
+                    {
+                        gemObj.SetActive(false);
+                    }
+                }
                 player.transform.position = new Vector3(GameManager.instance.playerPosition[0], GameManager.instance.playerPosition[1], GameManager.instance.playerPosition[2]);
             }
             GameManager.instance.shouldRepositionPlayer = false;
