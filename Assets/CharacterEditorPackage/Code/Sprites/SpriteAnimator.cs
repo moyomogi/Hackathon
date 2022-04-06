@@ -13,7 +13,8 @@ public class AnimationOffset
 //It has additional settings for offsets and rotations
 //The SpriteAnimator also interpolates sprite position for smooth movement because Unity's Update and FixedUpdate are not synched.
 //--------------------------------------------------------------------
-public class SpriteAnimator : MonoBehaviour {
+public class SpriteAnimator : MonoBehaviour
+{
     public enum SpriteInterpolation
     {
         None,
@@ -64,9 +65,9 @@ public class SpriteAnimator : MonoBehaviour {
             m_LastFixedUpdatePosition = m_CurrentFixedUpdatePosition;
         }
     }
-	
-	void Update () 
-	{
+
+    void Update()
+    {
         if (m_CharacterController == null || m_CharacterController.GetCollider() == null)
         {
             Debug.LogError("Sprite animator can't find properly set-up character");
@@ -106,25 +107,24 @@ public class SpriteAnimator : MonoBehaviour {
             {
                 Vector2 normal = m_CharacterController.GetCollider().GetEdgeCastInfo().GetWallNormal();
                 Vector2 up = CState.GetDirectionAlongNormal(Vector2.up, normal);
-				xScale = ((normal.x <= 0.0f) ? 1.0f : -1.0f);
+                xScale = ((normal.x <= 0.0f) ? 1.0f : -1.0f);
                 zRot = -Mathf.Atan2(up.x, up.y) * Mathf.Rad2Deg;
 
                 m_LastGoodDirection = -normal;
             }
             else
             {
-				zRot = 0.0f;
-				xScale = (m_LastGoodDirection.x >= 0.0f) ? 1.0f : -1.0f;
-				Vector2 up = m_CharacterController.GetCurrentVisualUp();
-				if (up != Vector2.up)
-				{
-					zRot = -Mathf.Atan2(up.x, up.y) * Mathf.Rad2Deg;
-				}
-                
+                zRot = 0.0f;
+                xScale = (m_LastGoodDirection.x >= 0.0f) ? 1.0f : -1.0f;
+                Vector2 up = m_CharacterController.GetCurrentVisualUp();
+                if (up != Vector2.up)
+                {
+                    zRot = -Mathf.Atan2(up.x, up.y) * Mathf.Rad2Deg;
+                }
             }
         }
         if (!m_BlockRotation)
-        { 
+        {
             zRot = Mathf.Lerp(m_LastZRot, zRot, 0.1f);
             m_SpriteTransformHook.transform.rotation = Quaternion.Euler(0.0f, 0.0f, zRot);
         }
@@ -143,7 +143,7 @@ public class SpriteAnimator : MonoBehaviour {
         }
         //Take the bottom of the capsule collider to rotate from
         //Animations themselves might adjust position via localposition
-        Vector3 heightAdjustment = m_CapsuleCollider.GetUpDirection() * (-m_CapsuleCollider.GetLength()*0.5f);
+        Vector3 heightAdjustment = m_CapsuleCollider.GetUpDirection() * (-m_CapsuleCollider.GetLength() * 0.5f);
         m_SpriteTransformHook.transform.position = startPosition + heightAdjustment;
         StartAnimation(m_CharacterController.GetCurrentSpriteState());
     }
@@ -151,7 +151,7 @@ public class SpriteAnimator : MonoBehaviour {
     Vector3 GetInterpolatedPosition()
     {
         //By taking the difference between Time.time and Time.fixedTime, the SpriteAnimator can determine an interpolationfactor between 0 and 1
-        //This essentially places the character somewhere between the last two fixedupdate positions (interpolation) essentially roughly an update in the past), 
+        //This essentially places the character somewhere between the last two fixedupdate positions (interpolation) essentially roughly an update in the past),
         //or between the last fixedupdate position and a projected next fixedupdate (extrapolation)
         Vector3 position = m_CapsuleCollider.GetCapsuleTransform().GetPosition();
         float interpolationFactor = (Time.time - Time.fixedTime) / Time.fixedDeltaTime;

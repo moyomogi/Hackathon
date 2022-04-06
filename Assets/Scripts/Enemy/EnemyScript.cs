@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-
 public class EnemyScript : MonoBehaviour
 {
     public int enemyHp = 1;
@@ -19,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     private Renderer _renderer;
 
     [SerializeField] private AudioClip dieSE;
-    
+
 
     private Sequence _seq;
 
@@ -27,19 +26,18 @@ public class EnemyScript : MonoBehaviour
 
     private Collider coll;
 
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Bullet"))
-        {
-            Destroy(other.gameObject);
-            enemyHp -= 1;
-            if (enemyHp <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }*/
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Bullet"))
+    //     {
+    //         Destroy(other.gameObject);
+    //         enemyHp -= 1;
+    //         if (enemyHp <= 0)
+    //         {
+    //             Destroy(gameObject);
+    //         }
+    //     }
+    // }
 
     private void Start()
     {
@@ -54,9 +52,9 @@ public class EnemyScript : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > shotSpan)
         {
-            if(dis <= 30.0f)
+            if (dis <= 30.0f)
             {
-                //Shot(); //アニメーションで制御することにした
+                // Shot(); // アニメーションで制御することにした
             }
             currentTime = 0f;
         }
@@ -69,7 +67,7 @@ public class EnemyScript : MonoBehaviour
         {
             enemyHp -= other.gameObject.GetComponent<BulletScript>().GetBulletDamage();
             Destroy(other.gameObject);
-            
+
 
             if (enemyHp <= 0)
             {
@@ -82,34 +80,23 @@ public class EnemyScript : MonoBehaviour
                 HitBlink();
             }
         }
-        /*else if (other.gameObject.CompareTag("Player"))
-        {
-            StartCoroutine("Blow");
-        }*/
+        // else if (other.gameObject.CompareTag("Player"))
+        // {
+        //     StartCoroutine("Blow");
+        // }
 
 
     }
 
-
-    //https://sunagitsune.com/unitycollisionvector2d/
-
-    
+    // https://sunagitsune.com/unitycollisionvector2d/
     IEnumerator Blow()
     {
-        int i = 0;
-        while (i < 5)
+        for (int i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(0.03f);
-            player.transform.Translate(
-                (player.transform.position - this.transform.position).normalized.x / 2,
-                0,
-                0
-            );
-
-            i++;
+            player.transform.Translate((player.transform.position - this.transform.position).normalized.x / 2, 0, 0);
         }
     }
-
 
     private void HitBlink()
     {
@@ -128,16 +115,14 @@ public class EnemyScript : MonoBehaviour
 
         var pos = this.gameObject.transform.position;
 
-        if(dis <= 30.0f)
+        if (dis <= 30.0f)
         {
-            var t = Instantiate(enemyBullet) as GameObject;
-            t.transform.position = pos;
+            GameObject obj = Instantiate(enemyBullet) as GameObject;
+            obj.transform.position = pos;
             Vector3 vec = Vector3.Scale((player.transform.position - this.gameObject.transform.position), new Vector3(1, 1, 0)).normalized;
-            
-            t.GetComponent<Rigidbody>().velocity = vec * bulletSpeed;
+
+            obj.GetComponent<Rigidbody>().velocity = vec * bulletSpeed;
         }
     }
-
-
 
 }

@@ -22,18 +22,18 @@ public class QuestManagement : MonoBehaviour
 
         questUI = transform.Find("QuestUI").gameObject;
 
-        questList[0] = new Quest("Jump", "10‰ñƒWƒƒƒ“ƒv‚ğs‚¤");
-        questList[1] = new Quest("Kill", "1‘Ì“G‚ğ“|‚·");
-        questList[2] = new Quest("Slide", "3‰ñƒXƒ‰ƒCƒfƒBƒ“ƒO‚ğs‚¤");
-        questList[3] = new Quest("WallRun", "3‰ñ•Ç‘–‚è‚ğ‚·‚é");
-        questList[4] = new Quest("Gem", "5ŒÂƒWƒFƒ€‚ğæ“¾‚·‚é");
+        questList[0] = new Quest("Jump", "10Â‰Å„ÂƒWÂƒÂƒÂƒÂ“ÂƒvÂ‚Ä‘ÂsÂ‚Â¤");
+        questList[1] = new Quest("Kill", "1Â‘ÄšÂ“GÂ‚Ä‘Â“|Â‚Ë‡");
+        questList[2] = new Quest("Slide", "3Â‰Å„ÂƒXÂƒÂ‰ÂƒCÂƒfÂƒBÂƒÂ“ÂƒOÂ‚Ä‘ÂsÂ‚Â¤");
+        questList[3] = new Quest("WallRun", "3Â‰Å„Â•Ã‡Â‘Â–Â‚ÄÂ‚Ä‘Â‚Ë‡Â‚Ã©");
+        questList[4] = new Quest("Gem", "5ÂŒÃ‚ÂƒWÂƒFÂƒÂ€Â‚Ä‘ÂÄ‡Â“Å¾Â‚Ë‡Â‚Ã©");
 
-        for(var i=0;i < totalQuestNum; i++)
+        for (var i = 0; i < totalQuestNum; i++)
         {
             Debug.Log(questList[i].GetTitle() + ":" + questList[i].GetInformation());
         }
 
-        
+
     }
 
     private void Update()
@@ -68,7 +68,7 @@ public class QuestManagement : MonoBehaviour
     public void Show(int n)
     {
         questInstanceList = new Transform[num];
-        for(var i = 0; i < num; i++)
+        for (var i = 0; i < num; i++)
         {
             questInstanceList[i] = transform.Find("QuestUI/BackGround/QuestSet/Quest" + i);
 
@@ -78,7 +78,7 @@ public class QuestManagement : MonoBehaviour
 
             var questNum = i;
 
-            if(questNum < GetTotalQuestNum())
+            if (questNum < GetTotalQuestNum())
             {
                 var check = IsQuestFlag(questNum);
                 var title = GetQuest(questNum).GetTitle();
@@ -94,9 +94,6 @@ public class QuestManagement : MonoBehaviour
                 toggleTextCom.text = "";
                 informationTextCom.text = "";
             }
-
         }
     }
-
-
 }

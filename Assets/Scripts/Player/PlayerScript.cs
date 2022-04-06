@@ -66,9 +66,6 @@ public class PlayerScript : MonoBehaviour
         wallRunCount = 0;
         isCountWallRun = true;
 
-
-        //Boss_SceneüÁ˝ŕxŰ
-
         uIManager.UpdatePlayerLevelUI(GameManager.instance.playerLevel);
 
         if (GameManager.instance.playerLevel == 2)
@@ -229,17 +226,12 @@ public class PlayerScript : MonoBehaviour
             Debug.Log(questManagement.GetQuest(4).GetInformation());
             LevelUp();
         }
-
-
         //Debug
         if (Input.GetKeyDown(KeyCode.P))
         {
             LevelUp();
         }
-
-
     }
-
 
     private void OnCollisionEnter(Collision other)
     {
@@ -273,11 +265,11 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Gem")
+        if (other.gameObject.tag == "Gem")
         {
-            audioSource.PlayOneShot(gemAudioClip,0.3f);
+            audioSource.PlayOneShot(gemAudioClip, 0.3f);
         }
-        
+
     }
 
     private void HitBlink()
@@ -308,8 +300,7 @@ public class PlayerScript : MonoBehaviour
     public void LevelUp()
     {
         if (GameManager.instance.playerLevel >= 6) return;
-        GameManager.instance.playerLevel += 1;
-        //řĘš&GtFNg
+        GameManager.instance.playerLevel++;
         uIManager.UpdatePlayerLevelUI(GameManager.instance.playerLevel);
         if (GameManager.instance.playerLevel == 2)
         {
@@ -335,7 +326,8 @@ public class PlayerScript : MonoBehaviour
             bullet.GetComponent<BulletScript>().SetBulletSpeed(75.0f);
             uIManager.LevelUpExplainText("level 4 -> 5 BulletDamage Up!!");
         }
-        else if (GameManager.instance.playerLevel == 6)//MAX
+        // MAX
+        else if (GameManager.instance.playerLevel == 6)
         {
             bullet.transform.localScale = new Vector3(10f, 10f, 1.0f);
             uIManager.LevelUpExplainText("level 5 -> MAX BulletSize Up!!");
@@ -353,6 +345,4 @@ public class PlayerScript : MonoBehaviour
     {
         return destroyEnemyCount;
     }
-
-
 }

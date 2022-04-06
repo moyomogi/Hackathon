@@ -68,7 +68,7 @@ public class BossScript : MonoBehaviour
         {
             if (dis <= 30.0f && bossHp >= 0)
             {
-                Shot(); 
+                Shot();
             }
             currentTime = 0f;
         }
@@ -77,8 +77,8 @@ public class BossScript : MonoBehaviour
         {
             bulletSpeed = 30.0f;
         }
-       
-        if(bossHp <= 50)
+
+        if (bossHp <= 50)
         {
             shotSpan = 1.0f;
         }
@@ -185,7 +185,7 @@ public class BossScript : MonoBehaviour
 
                 t1.GetComponent<Rigidbody>().velocity = vec1 * bulletSpeed * 0.15f;
             }
-            else if(bossHp <= 25)
+            else if (bossHp <= 25)
             {
                 var pos3 = player.transform.position + new Vector3(2.0f, 7.0f, 0.0f);
                 var t3 = Instantiate(enemyBullet) as GameObject;
@@ -202,7 +202,7 @@ public class BossScript : MonoBehaviour
                 t4.GetComponent<Rigidbody>().velocity = vec4 * bulletSpeed * 0.3f;
             }
         }
-        
+
     }
 
     public bool IsBossDead()

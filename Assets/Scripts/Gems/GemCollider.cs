@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class GemCollider : MonoBehaviour
 {
-    //private AudioSource audioSource;
-    //[SerializeField] private AudioClip gemAudioClip;
-
     void OnTriggerEnter(Collider other)
     {
         // Unity Tutorial | Coin Pickups https://youtu.be/XnKKaL5iwDM
@@ -15,8 +11,11 @@ public class GemCollider : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameManager.instance.gemsNum++;
+            GameManager.instance.obtainedGemNames.Add(gameObject.name);
             Debug.Log(GameManager.instance.gemsNum);
-            Destroy(gameObject);
+            // GameManager.instance.obtainedGemNames.forEach(Debug.Log);
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

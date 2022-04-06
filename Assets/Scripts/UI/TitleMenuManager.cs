@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class TitleMenuManager : MonoBehaviour
 {
     public GameObject[] buttonObjects = new GameObject[3];
     bool newGameButtonClicked = false, loadGameButtonClicked = false, quitButtonClicked = false;
-    int index = 0;
+    int index = -1;
     void Awake()
     {
         // Setup buttonObjects
@@ -42,6 +43,11 @@ public class TitleMenuManager : MonoBehaviour
         if (newGameButtonClicked) return;
         newGameButtonClicked = true;
         Debug.Log("New game button is clicked");
+
+        // Delete save data file
+        File.Delete(Application.persistentDataPath + "/save/data.dat");
+
+        GameManager.instance.Init();
         SceneManager.LoadScene("DemoScene");
     }
     // Load Game

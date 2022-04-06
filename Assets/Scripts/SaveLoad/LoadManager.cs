@@ -1,10 +1,10 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public static class LoadManager
 {
@@ -12,8 +12,14 @@ public static class LoadManager
     {
         string saveFolderPath = Application.persistentDataPath + "/save";
         string saveFilePath = saveFolderPath + "/data.dat";
+
+        // Init
+        GameManager.instance.Init();
+
         if (!File.Exists(saveFilePath))
         {
+            Debug.Log("No save data file.");
+            SceneManager.LoadScene("DemoScene");
             return;
         }
         BinaryFormatter bf = new BinaryFormatter();
@@ -21,15 +27,19 @@ public static class LoadManager
 
         // Input
         SaveData saveData = (SaveData)bf.Deserialize(file);
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        Debug.Log("Transition to " + saveData.sceneName);
+        SceneManager.LoadScene(saveData.sceneName);
+
+        // GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameManager.instance.playerPosition = saveData.playerPosition;
         GameManager.instance.playerLevel = saveData.playerLevel;
         GameManager.instance.gemsNum = saveData.gemsNum;
+        GameManager.instance.obtainedGemNames = saveData.obtainedGemNames;
+        GameManager.instance.questIsDone = saveData.questIsDone;
 
         file.Close();
 
         GameManager.instance.shouldRepositionPlayer = true;
-        Debug.Log("Transition to " + saveData.sceneName);
-        SceneManager.LoadScene(saveData.sceneName);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;  // https://gametukurikata.com/ui/textmeshpro
 
-public class GamePlayUIController : MonoBehaviour
+public class GameplayUIController : MonoBehaviour
 {
     // https://youtu.be/Udfmm8J8SPI?list=PLED8667EEZ9aB72WVMHfRHBd6oj9vplRy
     TextMeshProUGUI gemsNumText = null;
@@ -16,7 +16,7 @@ public class GamePlayUIController : MonoBehaviour
             Destroy(this);
             return;
         }
-        gemsNumText = GetComponent<TextMeshProUGUI>();
+        gemsNumText = GameObject.Find("GemsNumText").GetComponent<TextMeshProUGUI>();
         if (gemsNumText == null)
         {
             Debug.LogWarning("gemsNumText == null");
@@ -36,4 +36,3 @@ public class GamePlayUIController : MonoBehaviour
         }
     }
 }
-
