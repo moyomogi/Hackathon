@@ -110,7 +110,7 @@ public class PlayerScript : MonoBehaviour
             module = m_AbilityModuleManager.GetCurrentModule();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Z))
         {
             if (m_AbilityModuleManager != null)
             {
